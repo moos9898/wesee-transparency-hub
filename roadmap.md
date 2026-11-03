@@ -1,0 +1,14 @@
+# Roadmap
+- [x] Amazon row added
+- [x] Add Costco supplied card data and register costco-com without presentation changes.
+- [x] Insert and verify Costco's identity-only row with every score NULL; preserve demo Costco.
+- [x] Verify Costco page and existing card behavior.
+- [ ] Add Walmart's supplied 2026-10-22 card and factor map under walmart-com without presentation changes.
+- [ ] Insert and verify Walmart's identity-only row with every score NULL; preserve demo Walmart.
+- [ ] Verify Walmart page, registry, calculations and unscored statuses.
+- [x] Add and register Apple's supplied card and factor map under apple-com without presentation changes.
+- [x] Insert and verify Apple's identity-only row with every score NULL; preserve demo Apple.
+- [x] Verify Apple page, calculations and unscored statuses without changing other companies.
+- [ ] Add and register Meta's supplied card and factor map under meta-com without presentation changes.
+- [ ] Insert and verify Meta's identity-only row with every score NULL; preserve demo Meta.
+- [ ] Verify Meta page, cap and unscored statuses without changing other companies.

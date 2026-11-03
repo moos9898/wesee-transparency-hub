@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.log_company_change() FROM PUBLIC;
