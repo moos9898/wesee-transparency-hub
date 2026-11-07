@@ -14,7 +14,8 @@ export const APPLE_CARD = {
     "title": "How the overall is built",
     "lines": [
       {
-        "text": "One line: Its typical worker is paid well above the cost of living and the typical American's pay, and its layoff record is the lightest of any company scored so far — but its CEO actually took home $175.7M in one year, it spent a record $10.4M on lobbying, and it does not disclose how many of its workers are in the United States.",
+        "text": "One line: Its typical worker is paid well above the cost of living and the typical American's pay, and its layoff record is the lightest of any company scored so far — but its CEO actually took home [[$175.7M]] in one year, it spent a record [[$10.4M]] on lobbying, and it does not disclose how many of its workers are in the United States.",
+        "links": [{ "text": "$175.7M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "$10.4M", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000021754" }],
         "kind": "note"
       },
       {
@@ -70,7 +71,8 @@ export const APPLE_CARD = {
   "pillars": {
     "worker_standards": {
       "score": 68,
-      "sentence": "Its typical worker earns $139,483 — about three times what a worker needs to live on and more than twice the typical American's pay. The score is held down by the third question: Apple keeps so much profit per worker that the worker's share of the split is small. (Its pay figure is the worldwide median — the only one Apple discloses.)",
+      "sentence": "Its typical worker earns [[$139,483]] — about three times what a worker needs to live on and more than twice the typical American's pay. The score is held down by the third question: Apple keeps so much profit per worker that the worker's share of the split is small. (Its pay figure is the worldwide median — the only one Apple discloses.)",
+      "sentenceLinks": [{ "text": "$139,483", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }],
       "blocks": [
         {
           "title": "1. Worker Standards — 68",
@@ -90,7 +92,8 @@ export const APPLE_CARD = {
           "lines": [
             {
               "text": "$139,483 (typical worker's pay) ÷ $49,246 (cost of living) = 2.83× → score 100",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
               "text": "(Scale: at or above 1.5× the cost of living = 100.)",
@@ -103,7 +106,8 @@ export const APPLE_CARD = {
           "lines": [
             {
               "text": "$139,483 ÷ $62,608 (typical U.S. pay) = 2.23× → score 100",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             }
           ]
         },
@@ -112,11 +116,13 @@ export const APPLE_CARD = {
           "lines": [
             {
               "text": "Company profit $112,010,000,000 (2025 net income, Form 10-K) ÷ 166,000 workers = $674,759 (profit per worker)",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html"
             },
             {
               "text": "$139,483 (worker) ÷ ($139,483 + $674,759) = 17.1% (the worker's share) → score 4",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
               "text": "(Scale: a worker's share of 70% or more = 100; 55% = 80; 45% = 60; 35% = 40; 25% = 20; 15% or less = 0. This question uses company‑wide profit — the one declared exception to the U.S.‑only principle, printed here because no U.S.-only profit figure exists.)",
@@ -128,7 +134,8 @@ export const APPLE_CARD = {
             },
             {
               "text": "One sentence for the card: \"Its typical worker earns $139,483 a year — well above the cost of living ($49,246) and the typical U.S. worker's pay ($62,608); the score is held down because Apple's profit per worker is so large that the worker's share of the split is small.\" — with the worldwide flag attached: the $139,483 is Apple's worldwide median (full‑time and part‑time permanent staff, annualized), the only pay figure it files.",
-              "kind": "note"
+              "kind": "note",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
               "text": "Dignity gate checked: a median pay below the $49,246 cost of living would cap this pillar at 49. Apple's median is above it → gate not triggered.",
@@ -169,7 +176,8 @@ export const APPLE_CARD = {
       "factors": {
         "living_wage": {
           "status": "scored",
-          "note": "Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 4 → 68, on the worldwide median $139,483 (hierarchy step (c) — Apple files no U.S. or full-time-only median; flagged on the card)"
+          "note": "Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 4 → 68, on the worldwide median [[$139,483]] (hierarchy step (c) — Apple files no U.S. or full-time-only median; flagged on the card)",
+          "links": [{ "text": "$139,483", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }]
         },
         "benefits": {
           "status": "not_disclosed",
@@ -187,14 +195,16 @@ export const APPLE_CARD = {
     },
     "us_workforce_commitment": {
       "score": null,
-      "sentence": "Apple reports only its worldwide workforce (about 166,000 people). It does not say how many of its workers are in the United States, so there is nothing filed to score — and we do not estimate it. This pillar is not counted in any company's coverage while WeSee's measurement for it is unfinished (Class W).",
+      "sentence": "Apple reports only its worldwide workforce (about [[166,000]] people). It does not say how many of its workers are in the United States, so there is nothing filed to score — and we do not estimate it. This pillar is not counted in any company's coverage while WeSee's measurement for it is unfinished (Class W).",
+      "sentenceLinks": [{ "text": "166,000", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }],
       "blocks": [
         {
           "title": "2. U.S. Workforce Commitment — Not yet measured by WeSee",
           "lines": [
             {
               "text": "The locked rule scores four factors: the share of workers who are full‑time, whether U.S. hiring is growing, the share of work done by contractors instead of employees, and H-1B intensity (Factor 4, added by U.S. Workforce Rule v1.2). Apple files none of the inputs. Its 10‑K reports one number — approximately 166,000 full‑time‑equivalent employees worldwide — with no U.S. split, no full‑time/part‑time split of its own workforce, and no contractor count. Factor coverage: 0 of 4 factors could be scored → pillar NOT SCORED (the fourth factor, H-1B Intensity, prints its count below without scoring).",
-              "kind": "note"
+              "kind": "note",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html"
             },
             {
               "text": "This pillar therefore appears on this card as \"Not yet measured by WeSee\" — under Insufficient-Data Rule v1.2 the pillar is Class W (its locked measurement cannot yet score most companies from filed sources), so it is excluded from every company's coverage, Apple's included; the underlying fact — Apple files no U.S. headcount — is recorded here, not charged. Apple has announced large U.S. investment commitments (a $600B four‑year program announced in August 2025); under this rule an announcement is not a measurement — a filed target or pledge never scores, only filed counts do. When Apple files a U.S. headcount, this pillar scores the same day.",
@@ -239,7 +249,8 @@ export const APPLE_CARD = {
       "factors": {
         "full_time_employment": {
           "status": "not_disclosed",
-          "note": "Apple files one worldwide total only (~166,000 full-time-equivalent employees) — no U.S. count and no full-time/part-time split of its own workforce"
+          "note": "Apple files one worldwide total only (~[[166,000]] full-time-equivalent employees) — no U.S. count and no full-time/part-time split of its own workforce",
+          "links": [{ "text": "166,000", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }]
         },
         "domestic_hiring": {
           "status": "not_disclosed",
@@ -262,7 +273,8 @@ export const APPLE_CARD = {
     },
     "local_economic": {
       "score": 74,
-      "sentence": "Scored on the one factor Apple files in U.S. form: its U.S. tax provision was 22.1% of its U.S. pre-tax income. Apple does not disclose U.S. investment, U.S. R&D, or supplier figures.",
+      "sentence": "Scored on the one factor Apple files in U.S. form: its U.S. tax provision was [[22.1%]] of its U.S. pre-tax income. Apple does not disclose U.S. investment, U.S. R&D, or supplier figures.",
+      "sentenceLinks": [{ "text": "22.1%", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }],
       "blocks": [
         {
           "title": "3. Local Economic Contribution — 74 (Local Economic Contribution Rule v1.0, locked 2026-10-20)",
@@ -278,15 +290,18 @@ export const APPLE_CARD = {
           "lines": [
             {
               "text": "$9,683M (federal tax provision) + $1,541M (state tax provision) = $11,224M (U.S. tax provision, 10-K Note 7)",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html"
             },
             {
               "text": "$132,729M (total pre-tax income) − $82,000M (foreign pre-tax income, Note 7) = $50,729M (U.S. pre-tax income)",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html"
             },
             {
               "text": "$11,224M ÷ $50,729M = 22.1% (U.S. effective rate) → score 74",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html"
             },
             {
               "text": "(Locked scale: 30% or more = 100 · 25% = 85 · 21% = 70 · 17% = 50 · 13% = 30 · 8% = 15 · 0% = 0, interpolated: 70 + (1.1 ÷ 4 × 15) = 74.2 → 74. For scale: the U.S. statutory federal rate is 21%. An earlier draft scale printed in this card's first build gave the same 74; the locked scale governs.)",
@@ -294,7 +309,8 @@ export const APPLE_CARD = {
             },
             {
               "text": "The other three factors — not filed: Domestic Investment (Apple files capital spending of $12,715M worldwide only; its geographic note reports U.S. long‑lived assets of $40,274M — a balance built over decades, and the locked rule does not score balances) → not disclosed. U.S. R&D (total $34,550M filed; no geographic split exists) → not disclosed. U.S. Suppliers (no supplier‑spend figure filed) → not disclosed.",
-              "kind": "note"
+              "kind": "note",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html"
             },
             {
               "text": "Pillar = 74 (the Taxes factor alone, under the locked rule's scored‑factors‑only design — not a four‑factor measurement). Honesty note: Apple's U.S. rate is volatile year to year (17.9% in fiscal 2023 → factor 55; 8.5% in fiscal 2024 → 16, a year distorted by foreign‑tax effects around a one‑time European settlement; 22.1% in fiscal 2025 → 74), and pooling the three filed years would give 16.3% → 47. Under the locked rule the filed scored year governs (decision D‑3), so 74 is the pillar.",
@@ -331,7 +347,8 @@ export const APPLE_CARD = {
       "factors": {
         "domestic_investment": {
           "status": "not_disclosed",
-          "note": "Capex is filed worldwide only ($12,715M); no U.S. additions flow is filed. U.S. long-lived assets $40,274M are printed on the card as context only — a decades-built stock, which the draft rule does not score"
+          "note": "Capex is filed worldwide only ([[$12,715M]]); no U.S. additions flow is filed. U.S. long-lived assets [[$40,274M]] are printed on the card as context only — a decades-built stock, which the draft rule does not score",
+          "links": [{ "text": "$12,715M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }, { "text": "$40,274M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }]
         },
         "domestic_suppliers": {
           "status": "not_disclosed",
@@ -339,17 +356,20 @@ export const APPLE_CARD = {
         },
         "us_rd": {
           "status": "not_disclosed",
-          "note": "R&D is filed worldwide only ($34,550M, all inside the Corporate segment); no U.S. split exists"
+          "note": "R&D is filed worldwide only ([[$34,550M]], all inside the Corporate segment); no U.S. split exists",
+          "links": [{ "text": "$34,550M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }]
         },
         "taxes": {
           "status": "scored",
-          "note": "U.S. provision IS filed (Note 7: federal $9,683M + state $1,541M = $11,224M on U.S. pre-tax $50,729M → 22.1%) → factor 74 under Local Economic Contribution Rule v1.0 (locked 2026-10-20) = the pillar (Taxes alone)"
+          "note": "U.S. provision IS filed (Note 7: federal [[$9,683M]] + state [[$1,541M]] = [[$11,224M]] on U.S. pre-tax [[$50,729M]] → [[22.1%]]) → factor 74 under Local Economic Contribution Rule v1.0 (locked 2026-10-20) = the pillar (Taxes alone)",
+          "links": [{ "text": "$9,683M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }, { "text": "$1,541M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }, { "text": "$11,224M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }, { "text": "$50,729M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }, { "text": "22.1%", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }]
         }
       }
     },
     "layoffs_high_profits": {
       "score": 75,
-      "sentence": "It eliminated about 1,035 jobs across four small rounds in three years while profits hit a record $112B — no single mass round, but not zero either. Severance is disclosed nowhere.",
+      "sentence": "It eliminated about 1,035 jobs across four small rounds in three years while profits hit a record [[$112B]] — no single mass round, but not zero either. Severance is disclosed nowhere.",
+      "sentenceLinks": [{ "text": "$112B", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }],
       "blocks": [
         {
           "title": "4. Layoff & Job Security — 75",
@@ -405,7 +425,8 @@ export const APPLE_CARD = {
             },
             {
               "text": "Credits: +0 — severance is disclosed nowhere in Apple's filings; Apple bought back $90,711M of its own stock in fiscal 2025, which alone fails the zero-buyback credit; the one reported transfer window (60 days, 2024) was press-reported on the smallest round only",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html"
             },
             {
               "text": "Score: 100 − 25 = 75",
@@ -463,17 +484,20 @@ export const APPLE_CARD = {
         },
         "profitability": {
           "status": "scored",
-          "note": "Inside Layoff Rule v1.0: profitable in every window year (FY2025 net income $112,010M)"
+          "note": "Inside Layoff Rule v1.0: profitable in every window year (FY2025 net income [[$112,010M]])",
+          "links": [{ "text": "$112,010M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }]
         },
         "buybacks": {
           "status": "scored",
-          "note": "Inside Layoff Rule v1.0: buybacks $90,711M in FY2025 alone fail the zero-buyback credit test; severance disclosed nowhere → credits +0"
+          "note": "Inside Layoff Rule v1.0: buybacks [[$90,711M]] in FY2025 alone fail the zero-buyback credit test; severance disclosed nowhere → credits +0",
+          "links": [{ "text": "$90,711M", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }]
         }
       }
     },
     "ceo_pay_ratio": {
       "score": 5,
-      "sentence": "CEO Tim Cook actually took home $175,658,290 in 2025 — 1,259 times the typical worker's $139,483. Most of it was stock from past years that became his in 2025.",
+      "sentence": "CEO Tim Cook actually took home [[$175,658,290]] in 2025 — [[1,259]] times the typical worker's [[$139,483]]. Most of it was stock from past years that became his in 2025.",
+      "sentenceLinks": [{ "text": "$175,658,290", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "1,259", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "$139,483", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }],
       "blocks": [
         {
           "title": "5. CEO Pay Ratio — 5",
@@ -488,23 +512,28 @@ export const APPLE_CARD = {
             },
             {
               "text": "$3,000,000 (salary)",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
               "text": "+ $12,000,000 (bonus paid for 2025)",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
               "text": "+ $1,759,518 (all other compensation)",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
               "text": "+ $158,898,772 (stock that vested in 2025 — 695,869 shares, incl. $2,146,321 of dividend equivalents paid on vesting)",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
               "text": "+ $0 (option exercises — Apple grants stock units only; there were no options to exercise)",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
               "text": "= $175,658,290 (actually realized in 2025)",
@@ -528,7 +557,8 @@ export const APPLE_CARD = {
             },
             {
               "text": "For comparison only: Apple's own filed SEC pay ratio is 533:1. The SEC computes it from grant‑date award values ($74,294,811 for 2025, of which $57,535,293 is stock awarded that year at grant‑date value). WeSee's rule counts realized pay instead; the filed figure is printed here as a footnote and is never scored. One disclosure note: the proxy's footnote breaking down the $1,759,518 of other compensation lists items that add to $1,714,441 — $45,077 less than the filed table total. We score the filed table total, as filed, and note the gap rather than hide it.",
-              "kind": "note"
+              "kind": "note",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
               "text": "Sources: DEF 14A proxy — Summary Compensation Table (2025 row), \"Stock Vested—2025\" table (p. 55), \"CEO Pay Ratio—2025\" (p. 62).",
@@ -561,11 +591,13 @@ export const APPLE_CARD = {
       "factors": {
         "ceo_compensation": {
           "status": "scored",
-          "note": "Inside CEO Pay Rule v2.0 (realized pay $175,658,290 — salary $3,000,000 + bonus $12,000,000 + all other $1,759,518 + stock vested $158,898,772 + $0 options)"
+          "note": "Inside CEO Pay Rule v2.0 (realized pay [[$175,658,290]] — salary [[$3,000,000]] + bonus [[$12,000,000]] + all other [[$1,759,518]] + stock vested [[$158,898,772]] + [[$0]] options)",
+          "links": [{ "text": "$175,658,290", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "$3,000,000", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "$12,000,000", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "$1,759,518", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "$158,898,772", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "$0", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }]
         },
         "median_worker_compensation": {
           "status": "scored",
-          "note": "Inside CEO Pay Rule v2.0 (worldwide median $139,483, hierarchy step (c), flagged → 1,259:1 → 5 — the 1,000–1,500 segment is unchanged in v2.0; Apple's own filed grant-date ratio 533:1 printed as a footnote, never scored)"
+          "note": "Inside CEO Pay Rule v2.0 (worldwide median [[$139,483]], hierarchy step (c), flagged → [[1,259:1]] → 5 — the 1,000–1,500 segment is unchanged in v2.0; Apple's own filed grant-date ratio [[533:1]] printed as a footnote, never scored)",
+          "links": [{ "text": "$139,483", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "1,259:1", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "533:1", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }]
         }
       }
     },
@@ -627,7 +659,8 @@ export const APPLE_CARD = {
       "factors": {
         "offshore_workforce": {
           "status": "not_disclosed",
-          "note": "No workforce geography is filed (sales / pre-tax / asset splits are filed and printed on the card as exposure context — foreign pre-tax 61.8%, non-U.S. sales 63.5% — never scored; structure is not an act)"
+          "note": "No workforce geography is filed (sales / pre-tax / asset splits are filed and printed on the card as exposure context — foreign pre-tax [[61.8%]], non-U.S. sales [[63.5%]] — never scored; structure is not an act)",
+          "links": [{ "text": "61.8%", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }, { "text": "63.5%", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }]
         },
         "outsourced_services": {
           "status": "not_disclosed",
@@ -692,7 +725,8 @@ export const APPLE_CARD = {
             },
             {
               "text": "Printed but never scored (the rule's exposure lines, as filed): foreign pre‑tax earnings were $82.0B of $132.7B (61.8%) in fiscal 2025; non‑U.S. sales were $264.4B of $416.2B (63.5%). That Apple sells and earns mostly outside the U.S. is a structure, printed for the reader — under WeSee's rules, structure is not an act, and it is not scored.",
-              "kind": "note"
+              "kind": "note",
+              "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html"
             }
           ]
         },
@@ -728,7 +762,8 @@ export const APPLE_CARD = {
     },
     "lobbying_activity": {
       "score": 34,
-      "sentence": "It spent $10,410,000 lobbying the federal government in 2025 — the most in Apple's history. Apple has no PAC, so nothing is added for political-committee money.",
+      "sentence": "It spent [[$10,410,000]] lobbying the federal government in 2025 — the most in Apple's history. Apple has no PAC, so nothing is added for political-committee money.",
+      "sentenceLinks": [{ "text": "$10,410,000", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000021754" }],
       "blocks": [
         {
           "title": "9. Lobbying & Influence — 34",
@@ -739,7 +774,8 @@ export const APPLE_CARD = {
             },
             {
               "text": "$10,410,000 (federal lobbying, 2025 — OpenSecrets client summary for Apple Inc)",
-              "kind": "step"
+              "kind": "step",
+              "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000021754"
             },
             {
               "text": "+ $0 (PAC disbursements, 2023–24 cycle — Apple has no PAC)",
@@ -784,7 +820,8 @@ export const APPLE_CARD = {
       "factors": {
         "lobbying_spend": {
           "status": "scored",
-          "note": "Lobbying Rule v1.1: $10,410,000 federal lobbying, calendar 2025 (OpenSecrets client summary, Apple Inc, id D000021754) — the most Apple has ever reported in a year"
+          "note": "Lobbying Rule v1.1: [[$10,410,000]] federal lobbying, calendar 2025 (OpenSecrets client summary, Apple Inc, id D000021754) — the most Apple has ever reported in a year",
+          "links": [{ "text": "$10,410,000", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000021754" }]
         },
         "political_contributions": {
           "status": "scored",
@@ -816,10 +853,12 @@ export const APPLE_CARD = {
       "label": "U.S. Department of Labor — TAA determination TA‑W‑82,817 (Volt Management Corp., on‑site at Apple Austin; certified 2013)."
     },
     {
-      "label": "GAO‑26‑108703 (June 22, 2026; reissued August 24, 2026) — employer tables searched in full; Apple Inc. appears in none."
+      "label": "GAO‑26‑108703 (June 22, 2026; reissued August 24, 2026) — employer tables searched in full; Apple Inc. appears in none.",
+      "url": "https://www.gao.gov/assets/890/888620.pdf"
     },
     {
-      "label": "Workers on public food and health benefits (SNAP / Medicaid): the government's count (GAO, June 2026) lists the 25 largest employers of benefit recipients in each of 11 reporting states, as of September 2025. Apple is not among the employers reported. No national count exists. These counts are printed as context only — they measure a company's size as much as its pay, eligibility depends on a worker's whole household, and they are never part of any score. (The only \"Apple\" anywhere in the report is Applebee's — a different company.)"
+      "label": "Workers on public food and health benefits (SNAP / Medicaid): the government's count (GAO, June 2026) lists the 25 largest employers of benefit recipients in each of 11 reporting states, as of September 2025. Apple is not among the employers reported. No national count exists. These counts are printed as context only — they measure a company's size as much as its pay, eligibility depends on a worker's whole household, and they are never part of any score. (The only \"Apple\" anywhere in the report is Applebee's — a different company.)",
+      "url": "https://www.gao.gov/assets/890/888620.pdf"
     },
     {
       "label": "Every number above was read on its source page on 2026‑10‑14:"

@@ -4,7 +4,24 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { CompanyCard } from "@/components/company-card";
-import { DemoDataBanner } from "@/components/demo-data-banner";
+import { COMPANY_CARDS } from "@/lib/company-cards/amazon";
+
+// The ten real companies. The DB also holds fictional demo rows, which are
+// excluded here; card data (COMPANY_CARDS) is the sole source of scores.
+export const TEN_COMPANY_SLUGS = [
+  "amazon-com", "apple-com", "costco-com", "walmart-com", "meta-com",
+  "microsoft-com", "alphabet-com", "nvidia-com", "berkshire-com", "jpmorgan-com",
+] as const;
+
+/** Keep only the ten real companies; overlay the card's overall when one exists. */
+export function overlayCardScores<T extends { slug: string; overall_score: number | null }>(rows: T[]): T[] {
+  return rows
+    .filter((r) => (TEN_COMPANY_SLUGS as readonly string[]).includes(r.slug))
+    .map((r) => {
+      const card = COMPANY_CARDS[r.slug];
+      return card ? { ...r, overall_score: card.overall } : r;
+    });
+}
 
 
 export const Route = createFileRoute("/companies")({
@@ -41,47 +58,47 @@ function CompaniesPage() {
     },
   });
 
+  const rows = useMemo(() => overlayCardScores(data ?? []), [data]);
+
   const industries = useMemo(() => {
     const s = new Set<string>();
-    data?.forEach((d) => d.industry && s.add(d.industry));
+    rows.forEach((d) => d.industry && s.add(d.industry));
     return ["all", ...Array.from(s).sort()];
-  }, [data]);
+  }, [rows]);
 
   const counts = useMemo(() => {
-    const rows = data ?? [];
     const scored = rows.filter((r) => r.overall_score != null).length;
     return { all: rows.length, scored, partial: rows.length - scored };
-  }, [data]);
+  }, [rows]);
 
   const filtered = useMemo(() => {
-    let rows = data ?? [];
+    let filteredRows = rows;
     if (q) {
       const Q = q.toLowerCase();
-      rows = rows.filter((r) =>
+      filteredRows = filteredRows.filter((r) =>
         r.name.toLowerCase().includes(Q) ||
         (r.ticker ?? "").toLowerCase().includes(Q) ||
         (r.industry ?? "").toLowerCase().includes(Q) ||
         (r.country ?? "").toLowerCase().includes(Q)
       );
     }
-    if (industry !== "all") rows = rows.filter((r) => r.industry === industry);
-    if (coverage === "scored") rows = rows.filter((r) => r.overall_score != null);
-    if (coverage === "partial") rows = rows.filter((r) => r.overall_score == null);
-    rows = [...rows].sort((a, b) =>
+    if (industry !== "all") filteredRows = filteredRows.filter((r) => r.industry === industry);
+    if (coverage === "scored") filteredRows = filteredRows.filter((r) => r.overall_score != null);
+    if (coverage === "partial") filteredRows = filteredRows.filter((r) => r.overall_score == null);
+    filteredRows = [...filteredRows].sort((a, b) =>
       sort === "score" ? Number(b.overall_score ?? 0) - Number(a.overall_score ?? 0) : a.name.localeCompare(b.name)
     );
-    return rows;
-  }, [data, q, industry, coverage, sort]);
+    return filteredRows;
+  }, [rows, q, industry, coverage, sort]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-      <DemoDataBanner />
       <div className="mt-8 flex flex-col gap-2">
 
         <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Index</p>
         <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Companies</h1>
         <p className="text-muted-foreground">
-          {data?.length ?? 0} U.S.-operating companies scored across nine contribution pillars.
+          {rows.length} U.S.-operating companies scored across nine contribution pillars.
         </p>
       </div>
 

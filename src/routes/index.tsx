@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ArrowRight, Search, ShieldCheck, Layers, Globe2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { CompanyCard } from "@/components/company-card";
 import { PILLARS } from "@/lib/score";
-import { DemoDataBanner } from "@/components/demo-data-banner";
+import { overlayCardScores } from "./companies";
 
 
 export const Route = createFileRoute("/")({
@@ -27,12 +27,22 @@ function Home() {
       const { data, error } = await supabase
         .from("companies")
         .select("slug,name,ticker,industry,country,overall_score")
-        .order("overall_score", { ascending: false })
-        .limit(6);
+        .order("overall_score", { ascending: false });
       if (error) throw error;
       return data ?? [];
     },
   });
+
+  // Top six of the ten real companies, ranked by the overlaid card scores.
+  // (The DB-side limit was dropped: real rows carry NULL scores, so a DB-side
+  // limit/sort would return an arbitrary subset of the ten.)
+  const topCompanies = useMemo(
+    () =>
+      overlayCardScores(top ?? [])
+        .sort((a, b) => Number(b.overall_score ?? 0) - Number(a.overall_score ?? 0))
+        .slice(0, 6),
+    [top],
+  );
 
   const { data: searchResults } = useQuery({
     queryKey: ["search", q],
@@ -48,6 +58,9 @@ function Home() {
       return data ?? [];
     },
   });
+
+  // Search shows only the ten real companies, with card scores overlaid.
+  const searchRows = useMemo(() => overlayCardScores(searchResults ?? []), [searchResults]);
 
   return (
     <>
@@ -74,7 +87,7 @@ function Home() {
                 <input
                   value={q}
                   onChange={(e) => setQ(e.target.value)}
-                  placeholder="Search Meridian, Stonebridge, Ironvale, Baywood…"
+                  placeholder="Search Costco, Amazon, Apple…"
                   className="w-full rounded-xl border border-border bg-card pl-11 pr-32 py-4 text-base outline-none ring-0 transition focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
                 />
                 <Link
@@ -88,10 +101,10 @@ function Home() {
               {q.length > 1 && (
                 <div className="relative">
                   <div className="absolute z-30 mt-2 w-full overflow-hidden rounded-xl border border-border bg-popover text-left ring-glow">
-                    {(searchResults ?? []).length === 0 ? (
+                    {(searchRows ?? []).length === 0 ? (
                       <div className="px-4 py-3 text-sm text-muted-foreground">No matches</div>
                     ) : (
-                      searchResults!.map((r) => (
+                      searchRows!.map((r) => (
                         <Link
                           key={r.slug}
                           to="/companies/$slug"
@@ -114,7 +127,7 @@ function Home() {
 
           <div className="mx-auto mt-16 grid max-w-4xl grid-cols-3 gap-4 text-center fade-up">
             {[
-              { label: "U.S. companies", value: "25+" },
+              { label: "U.S. companies", value: "10" },
               { label: "Weighted pillars", value: String(PILLARS.length) },
               { label: "Signals tracked", value: "70+" },
             ].map((s) => (
@@ -129,7 +142,6 @@ function Home() {
 
       {/* Top scoring */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <DemoDataBanner />
         <div className="mt-8 flex items-end justify-between">
           <div>
 
@@ -141,7 +153,7 @@ function Home() {
           </Link>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {top?.map((c) => <CompanyCard key={c.slug} c={c} />)}
+          {topCompanies?.map((c) => <CompanyCard key={c.slug} c={c} />)}
         </div>
       </section>
 

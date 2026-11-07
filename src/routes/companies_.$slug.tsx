@@ -24,6 +24,7 @@ import { factorsByPillar } from "@/lib/methodology/registry";
 import { hasRealEvidence } from "@/lib/methodology/evidence";
 import { DemoDataBanner } from "@/components/demo-data-banner";
 import { COMPANY_CARDS, FACTOR_STATUS_LABEL, type CompanyCard, type CardPillar, type StepBlock } from "@/lib/company-cards/amazon";
+import { renderLinkedText } from "@/lib/linked-text";
 
 function StepLines({ block }: { block: StepBlock }) {
   return (
@@ -32,9 +33,13 @@ function StepLines({ block }: { block: StepBlock }) {
       <ul className="mt-2 grid gap-1.5">
         {block.lines.map((l, i) => (
           <li key={i} className={`flex items-baseline justify-between gap-3 text-xs ${l.kind === "total" ? "border-t border-border pt-1.5 font-semibold text-foreground" : l.kind === "step" ? "text-foreground/90" : "text-muted-foreground"}`}>
-            <span>{l.text}</span>
+            <span>{renderLinkedText(l.text, l.links)}</span>
             {l.result && (
-              <span className="shrink-0 rounded-md border border-primary/40 bg-primary/10 px-1.5 py-0.5 tabular-nums text-foreground">{l.result}</span>
+              l.url ? (
+                <a href={l.url} target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-md border border-primary/40 bg-primary/10 px-1.5 py-0.5 tabular-nums text-foreground underline underline-offset-2">{l.result}</a>
+              ) : (
+                <span className="shrink-0 rounded-md border border-primary/40 bg-primary/10 px-1.5 py-0.5 tabular-nums text-foreground">{l.result}</span>
+              )
             )}
           </li>
         ))}
@@ -56,7 +61,7 @@ function CardPillarItem({ pillarKey, label, weight, cp }: { pillarKey: string; l
   const value = cp.score;
   const factors = factorsByPillar(pillarKey as PillarKey);
   return (
-    <AccordionItem value={pillarKey} className={`border-border ${value == null ? "opacity-70" : ""}`}>
+    <AccordionItem id={`pillar-${pillarKey}`} value={pillarKey} className={`border-border ${value == null ? "opacity-70" : ""}`}>
       <AccordionTrigger className="hover:no-underline">
         <div className="flex-1 pr-4">
           <div className="flex items-baseline justify-between gap-3">
@@ -75,12 +80,12 @@ function CardPillarItem({ pillarKey, label, weight, cp }: { pillarKey: string; l
               <div className="h-full rounded-full transition-[width] duration-1000" style={{ width: `${value}%`, backgroundColor: scoreColor(value) }} />
             )}
           </div>
-          <p className="mt-2 text-left text-xs font-normal text-muted-foreground">{cp.sentence}</p>
+          <p className="mt-2 text-left text-xs font-normal text-muted-foreground">{renderLinkedText(cp.sentence, cp.sentenceLinks)}</p>
         </div>
       </AccordionTrigger>
       <AccordionContent>
         <div className="space-y-3 pt-2 text-sm">
-          {cp.footnote && <p className="text-[12px] italic text-muted-foreground">{cp.footnote}</p>}
+          {cp.footnote && <p className="text-[12px] italic text-muted-foreground">{renderLinkedText(cp.footnote, cp.footnoteLinks)}</p>}
           {cp.rule && <p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{cp.rule}</p>}
           {cp.blocks?.map((b, i) => <StepLines key={i} block={b} />)}
           <div className="rounded-lg border border-border bg-muted/10 p-3">
@@ -96,7 +101,7 @@ function CardPillarItem({ pillarKey, label, weight, cp }: { pillarKey: string; l
                         {fs ? FACTOR_STATUS_LABEL[fs.status] : "Not yet measurable"}
                       </span>
                     </div>
-                    {fs?.note && <p className="mt-0.5 text-[11px] text-muted-foreground">{fs.note}</p>}
+                    {fs?.note && <p className="mt-0.5 text-[11px] text-muted-foreground">{renderLinkedText(fs.note, fs.links)}</p>}
                   </li>
                 );
               })}
@@ -177,6 +182,8 @@ function CompanyPage() {
   const scoredCount = PILLARS.filter((p) => scores[p.key] != null).length;
   const realSourced = hasRealEvidence(data);
   const card = COMPANY_CARDS[data.slug];
+  // Employees tile links to the company's 10-K (the URL already in the card's sources).
+  const tenKUrl = card?.sources.find((s) => /10-K/i.test(s.label))?.url;
 
   // Build positives / penalties from weighted contribution deltas from a neutral 60 baseline
   const ranked = PILLARS.map((p) => {
@@ -242,7 +249,7 @@ function CompanyPage() {
             <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
               <Meta icon={Building2} label="Industry" value={data.industry} />
               <Meta icon={Globe} label="HQ" value={data.headquarters} />
-              <Meta icon={Users} label="Employees" value={data.employees?.toLocaleString()} />
+              <Meta icon={Users} label="Employees" value={data.employees?.toLocaleString()} href={tenKUrl} />
               <Meta icon={Calendar} label="Founded" value={data.founded} />
             </div>
           </div>
@@ -361,7 +368,7 @@ function CompanyPage() {
                 if (card) return <CardPillarItem key={p.key} pillarKey={p.key} label={p.label} weight={p.weight} cp={card.pillars[p.key]} />;
                 if (value == null) {
                   return (
-                    <AccordionItem key={p.key} value={p.key} className="border-border opacity-70">
+                    <AccordionItem id={`pillar-${p.key}`} key={p.key} value={p.key} className="border-border opacity-70">
                       <AccordionTrigger className="hover:no-underline">
                         <div className="flex-1 pr-4">
                           <div className="flex items-baseline justify-between">
@@ -383,7 +390,7 @@ function CompanyPage() {
                 const r = pillarRationale(p.key as PillarKey, value, customNote);
                 const color = scoreColor(value);
                 return (
-                  <AccordionItem key={p.key} value={p.key} className="border-border">
+                  <AccordionItem id={`pillar-${p.key}`} key={p.key} value={p.key} className="border-border">
                     <AccordionTrigger className="hover:no-underline">
                       <div className="flex-1 pr-4">
                         <div className="flex items-baseline justify-between">
@@ -691,24 +698,28 @@ function CompanyPage() {
             </p>
             <div className="mt-6 space-y-2">
               {PILLARS.map((p) => (
-                <Link
+                <div
                   key={p.key}
-                  to="/methodology/$slug"
-                  params={{ slug: p.slug }}
                   className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm hover:bg-accent"
                 >
                   <span>
-                    <span className="font-medium">{p.label}</span>
+                    <Link
+                      to="/methodology/$slug"
+                      params={{ slug: p.slug }}
+                      className="font-medium hover:underline"
+                    >
+                      {p.label}
+                    </Link>
                     <span className="ml-2 text-xs text-muted-foreground">{(p.weight * 100).toFixed(0)}%</span>
                   </span>
-                  <span className="tabular-nums text-muted-foreground">
+                  <a href={`#pillar-${p.key}`} className="tabular-nums text-muted-foreground underline underline-offset-2 hover:text-foreground">
                     {card
                       ? card.pillars[p.key].score != null
                         ? card.pillars[p.key].score
                         : card.pillars[p.key].status ?? "—"
                       : scores[p.key] == null ? "—" : scores[p.key]!.toFixed(0)}
-                  </span>
-                </Link>
+                  </a>
+                </div>
               ))}
             </div>
           </div>
@@ -958,13 +969,21 @@ function GaugeCard({ icon: Icon, label, value, color, band }: { icon: any; label
   );
 }
 
-function Meta({ icon: Icon, label, value }: { icon: any; label: string; value: any }) {
+function Meta({ icon: Icon, label, value, href }: { icon: any; label: string; value: any; href?: string }) {
   return (
     <div className="rounded-lg border border-border bg-card/40 px-3 py-2.5">
       <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
         <Icon className="h-3 w-3" /> {label}
       </div>
-      <p className="mt-1 truncate text-sm font-medium">{value ?? "—"}</p>
+      <p className="mt-1 truncate text-sm font-medium">
+        {href ? (
+          <a href={href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+            {value ?? "—"}
+          </a>
+        ) : (
+          value ?? "—"
+        )}
+      </p>
     </div>
   );
 }

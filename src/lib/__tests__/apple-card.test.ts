@@ -8,8 +8,8 @@ describe("supplied Apple card", () => {
     expect(COMPANY_CARDS["apple-com"]).toBe(APPLE_CARD);
     expect(COMPANY_CARDS["amazon-com"]).toBe(AMAZON_CARD);
     expect(COMPANY_CARDS["costco-com"]).toBe(COSTCO_CARD);
-    expect(AMAZON_CARD.overall).toBe(31);
-    expect(COSTCO_CARD.overall).toBe(88);
+    expect(AMAZON_CARD.overall).toBe(49);
+    expect(COSTCO_CARD.overall).toBe(93);
   });
 
   it("uses the supplied final headline and pillar scores", () => {

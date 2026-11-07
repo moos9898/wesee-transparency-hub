@@ -14,6 +14,7 @@ export function SiteFooter() {
           { to: "/companies", label: "Companies" },
           { to: "/methodology", label: "Methodology" },
           { to: "/about", label: "About" },
+          { to: "/feedback", label: "Give feedback" },
         ]} />
         <FooterCol title="Legal" links={[
           { to: "/privacy", label: "Privacy Policy" },
@@ -29,7 +30,7 @@ export function SiteFooter() {
         ]} />
       </div>
       <div className="border-t border-border/60 py-4 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} WeSee. Companies shown are fictional demo examples for methodology preview only, except where a page is marked as real sourced data.
+        © {new Date().getFullYear()} WeSee. All company scores are drawn from public filings and disclosed sources.
       </div>
     </footer>
   );

@@ -9,51 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as MethodologyRouteImport } from './routes/methodology'
-import { Route as CompaniesRouteImport } from './routes/companies'
-import { Route as AuthRouteImport } from './routes/auth'
-import { Route as AdminRouteImport } from './routes/admin'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as MethodologyIndexRouteImport } from './routes/methodology.index'
-import { Route as MethodologySourceHierarchyRouteImport } from './routes/methodology.source-hierarchy'
-import { Route as MethodologyOverallScoreRouteImport } from './routes/methodology.overall-score'
-import { Route as MethodologyFrameworkRouteImport } from './routes/methodology.framework'
-import { Route as MethodologySlugRouteImport } from './routes/methodology.$slug'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CompaniesRouteImport } from './routes/companies'
+import { Route as FeedbackRouteImport } from './routes/feedback'
+import { Route as MethodologyRouteImport } from './routes/methodology'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as CompaniesSlugRouteImport } from './routes/companies_.$slug'
+import { Route as MethodologyIndexRouteImport } from './routes/methodology.index'
+import { Route as MethodologySlugRouteImport } from './routes/methodology.$slug'
+import { Route as MethodologyFrameworkRouteImport } from './routes/methodology.framework'
+import { Route as MethodologyOverallScoreRouteImport } from './routes/methodology.overall-score'
+import { Route as MethodologySourceHierarchyRouteImport } from './routes/methodology.source-hierarchy'
 import { Route as MethodologyPillarFactorRouteImport } from './routes/methodology.$pillar.$factor'
 import { Route as CompaniesSlugSourcesPillarFactorRouteImport } from './routes/companies_.$slug_.sources.$pillar.$factor'
 
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MethodologyRoute = MethodologyRouteImport.update({
-  id: '/methodology',
-  path: '/methodology',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CompaniesRoute = CompaniesRouteImport.update({
-  id: '/companies',
-  path: '/companies',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthRoute = AuthRouteImport.update({
-  id: '/auth',
-  path: '/auth',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminRoute = AdminRouteImport.update({
-  id: '/admin',
-  path: '/admin',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -61,14 +37,64 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompaniesRoute = CompaniesRouteImport.update({
+  id: '/companies',
+  path: '/companies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodologyRoute = MethodologyRouteImport.update({
+  id: '/methodology',
+  path: '/methodology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompaniesSlugRoute = CompaniesSlugRouteImport.update({
+  id: '/companies_/$slug',
+  path: '/companies/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MethodologyIndexRoute = MethodologyIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => MethodologyRoute,
+} as any)
+const MethodologySlugRoute = MethodologySlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => MethodologyRoute,
+} as any)
+const MethodologyFrameworkRoute = MethodologyFrameworkRouteImport.update({
+  id: '/framework',
+  path: '/framework',
+  getParentRoute: () => MethodologyRoute,
+} as any)
+const MethodologyOverallScoreRoute = MethodologyOverallScoreRouteImport.update({
+  id: '/overall-score',
+  path: '/overall-score',
   getParentRoute: () => MethodologyRoute,
 } as any)
 const MethodologySourceHierarchyRoute =
@@ -77,26 +103,6 @@ const MethodologySourceHierarchyRoute =
     path: '/source-hierarchy',
     getParentRoute: () => MethodologyRoute,
   } as any)
-const MethodologyOverallScoreRoute = MethodologyOverallScoreRouteImport.update({
-  id: '/overall-score',
-  path: '/overall-score',
-  getParentRoute: () => MethodologyRoute,
-} as any)
-const MethodologyFrameworkRoute = MethodologyFrameworkRouteImport.update({
-  id: '/framework',
-  path: '/framework',
-  getParentRoute: () => MethodologyRoute,
-} as any)
-const MethodologySlugRoute = MethodologySlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => MethodologyRoute,
-} as any)
-const CompaniesSlugRoute = CompaniesSlugRouteImport.update({
-  id: '/companies_/$slug',
-  path: '/companies/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const MethodologyPillarFactorRoute = MethodologyPillarFactorRouteImport.update({
   id: '/$pillar/$factor',
   path: '/$pillar/$factor',
@@ -115,6 +121,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/auth': typeof AuthRoute
   '/companies': typeof CompaniesRoute
+  '/feedback': typeof FeedbackRoute
   '/methodology': typeof MethodologyRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -133,6 +140,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/auth': typeof AuthRoute
   '/companies': typeof CompaniesRoute
+  '/feedback': typeof FeedbackRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/companies/$slug': typeof CompaniesSlugRoute
@@ -151,6 +159,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/auth': typeof AuthRoute
   '/companies': typeof CompaniesRoute
+  '/feedback': typeof FeedbackRoute
   '/methodology': typeof MethodologyRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -171,6 +180,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/auth'
     | '/companies'
+    | '/feedback'
     | '/methodology'
     | '/privacy'
     | '/terms'
@@ -189,6 +199,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/auth'
     | '/companies'
+    | '/feedback'
     | '/privacy'
     | '/terms'
     | '/companies/$slug'
@@ -206,6 +217,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/auth'
     | '/companies'
+    | '/feedback'
     | '/methodology'
     | '/privacy'
     | '/terms'
@@ -225,6 +237,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   AuthRoute: typeof AuthRoute
   CompaniesRoute: typeof CompaniesRoute
+  FeedbackRoute: typeof FeedbackRoute
   MethodologyRoute: typeof MethodologyRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
@@ -234,46 +247,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/methodology': {
-      id: '/methodology'
-      path: '/methodology'
-      fullPath: '/methodology'
-      preLoaderRoute: typeof MethodologyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/companies': {
-      id: '/companies'
-      path: '/companies'
-      fullPath: '/companies'
-      preLoaderRoute: typeof CompaniesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth': {
-      id: '/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin': {
-      id: '/admin'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof AdminRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -283,11 +261,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/companies': {
+      id: '/companies'
+      path: '/companies'
+      fullPath: '/companies'
+      preLoaderRoute: typeof CompaniesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/methodology': {
+      id: '/methodology'
+      path: '/methodology'
+      fullPath: '/methodology'
+      preLoaderRoute: typeof MethodologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/companies_/$slug': {
+      id: '/companies_/$slug'
+      path: '/companies/$slug'
+      fullPath: '/companies/$slug'
+      preLoaderRoute: typeof CompaniesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/methodology/': {
@@ -297,18 +324,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MethodologyIndexRouteImport
       parentRoute: typeof MethodologyRoute
     }
-    '/methodology/source-hierarchy': {
-      id: '/methodology/source-hierarchy'
-      path: '/source-hierarchy'
-      fullPath: '/methodology/source-hierarchy'
-      preLoaderRoute: typeof MethodologySourceHierarchyRouteImport
-      parentRoute: typeof MethodologyRoute
-    }
-    '/methodology/overall-score': {
-      id: '/methodology/overall-score'
-      path: '/overall-score'
-      fullPath: '/methodology/overall-score'
-      preLoaderRoute: typeof MethodologyOverallScoreRouteImport
+    '/methodology/$slug': {
+      id: '/methodology/$slug'
+      path: '/$slug'
+      fullPath: '/methodology/$slug'
+      preLoaderRoute: typeof MethodologySlugRouteImport
       parentRoute: typeof MethodologyRoute
     }
     '/methodology/framework': {
@@ -318,19 +338,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MethodologyFrameworkRouteImport
       parentRoute: typeof MethodologyRoute
     }
-    '/methodology/$slug': {
-      id: '/methodology/$slug'
-      path: '/$slug'
-      fullPath: '/methodology/$slug'
-      preLoaderRoute: typeof MethodologySlugRouteImport
+    '/methodology/overall-score': {
+      id: '/methodology/overall-score'
+      path: '/overall-score'
+      fullPath: '/methodology/overall-score'
+      preLoaderRoute: typeof MethodologyOverallScoreRouteImport
       parentRoute: typeof MethodologyRoute
     }
-    '/companies_/$slug': {
-      id: '/companies_/$slug'
-      path: '/companies/$slug'
-      fullPath: '/companies/$slug'
-      preLoaderRoute: typeof CompaniesSlugRouteImport
-      parentRoute: typeof rootRouteImport
+    '/methodology/source-hierarchy': {
+      id: '/methodology/source-hierarchy'
+      path: '/source-hierarchy'
+      fullPath: '/methodology/source-hierarchy'
+      preLoaderRoute: typeof MethodologySourceHierarchyRouteImport
+      parentRoute: typeof MethodologyRoute
     }
     '/methodology/$pillar/$factor': {
       id: '/methodology/$pillar/$factor'
@@ -377,6 +397,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   AuthRoute: AuthRoute,
   CompaniesRoute: CompaniesRoute,
+  FeedbackRoute: FeedbackRoute,
   MethodologyRoute: MethodologyRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
