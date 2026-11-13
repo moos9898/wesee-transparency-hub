@@ -140,6 +140,26 @@ function Home() {
         </div>
       </section>
 
+      {/* Mission */}
+      <section className="border-t border-border/60 bg-card/30">
+        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+          <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Our mission</p>
+          <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-4xl">WeSee</h2>
+          <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p>For two hundred years, people fought for the 40-hour week, for rest days, for work that was secure. Now those protections are slipping away in a fraction of the time. Profits hit records. Paychecks buy less. The gap at the top keeps growing.</p>
+            <p>Every company makes money. What matters is what happens next.</p>
+            <p>Some companies give back. They pay fair wages, keep their people for years, and invest where they operate. The wealth circulates.</p>
+            <p>Others don&apos;t share. Wages stay as low as the market allows, workers are cut even in the best of years, jobs move abroad, and fortunes go to bending policy. The wealth stops at the top.</p>
+            <p>WeSee advocates only for the interests of the people of this country.</p>
+            <p>WeSee tells them apart. Not by what a company says, believes, or advertises. Slogans earn nothing here and cost nothing here. We measure the record: pay, jobs, layoffs, outsourcing, lobbying, taxes, and what returns to the community. An image can be bought. A record can&apos;t.</p>
+            <p>The rules are published and the same for every company. Every score traces to the exact page of the exact filing, so anyone can check.</p>
+            <p>Now, where you come in. Every product has people behind it. Buy from a company that doesn&apos;t share, and you&apos;re paying for someone, somewhere, to work long hours for little, far from their family. Those standards spread until they reach the rest of us. Buy from a company that gives back, and you help build a world where people can live well. You included.</p>
+            <p>So we&apos;ll champion the companies that give the most and ask you to buy from them first. The ones that give the least, avoid where you can and use as little as you must.</p>
+            <p>No politics. No protests. Just the truth, and the one power you already hold: where your money goes.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Top scoring */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="mt-8 flex items-end justify-between">
