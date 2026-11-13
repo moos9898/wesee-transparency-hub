@@ -16,6 +16,12 @@ const OS = "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2
 const FEC = "https://www.fec.gov/data/committee/C00428623/";
 const GAO = "https://www.gao.gov/assets/890/888620.pdf";
 const DOL = "https://www.dol.gov/sites/dolgov/files/ETA/tradeact/pdfs/TAA_Termination_Fact_Sheet.pdf";
+const BLS = "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm";
+const MIT = "https://livingwage.mit.edu/";
+const USCIS = "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub";
+const CA_WARN = "https://edd.ca.gov/en/jobs_and_training/layoff_services_warn";
+const WA_WARN = "https://esd.wa.gov/employer-requirements/layoffs-and-employee-notifications/warn-requirements";
+const K24 = "https://www.sec.gov/Archives/edgar/data/1652044/000165204425000014/goog-20241231.htm";
 
 const s = (text: string, result?: string, url?: string): StepLine => ({ text, result, kind: "step", url });
 const t = (text: string, result?: string, url?: string): StepLine => ({ text, result, kind: "total", url });
@@ -55,10 +61,10 @@ export const ALPHABET_CARD: CompanyCard = {
       rule: "Worker Pay Fairness Rule v1.3; pay factor only",
       blocks: [
         { title: "QUESTION 1 — Can the worker live on the pay?", lines: [
-          s("$310,826 (worker earns) → $49,246 (worker needs to live on) → $6.31 earned per $1 needed", "score 100"),
+          { text: "[[$310,826]] (worker earns) → $49,246 (worker needs to live on) → $6.31 earned per $1 needed", result: "score 100", kind: "step", links: [{ text: "$310,826", url: DEF26 }] },
         ] },
         { title: "QUESTION 2 — Is it what other Americans make?", lines: [
-          s("$310,826 (worker earns) → $62,608 (typical American worker makes, BLS 2025: $1,204/week x 52) → 4.96", "score 100"),
+          { text: "[[$310,826]] (worker earns) → [[$62,608]] (typical American worker makes, BLS 2025: [[$1,204/week]] x 52) → 4.96", result: "score 100", kind: "step", links: [{ text: "$310,826", url: DEF26 }, { text: "$62,608", url: BLS }, { text: "$1,204/week", url: BLS }] },
         ] },
         { title: "QUESTION 3 — How is the money split?", lines: [
           n("First show where $692,642 comes from — it is one division, never present it bare:"),
@@ -70,8 +76,8 @@ export const ALPHABET_CARD: CompanyCard = {
           c("Dignity gate: not triggered — pay is far above the national living wage."),
           n("Known limit, printed with the score: profit per worker is company-wide because no company files a U.S.-only profit — for every company alike. Alphabet's pay figure is worldwide too (see note above); both halves of every comparison are labelled."),
           n("Pay figure note (printed with the score): Alphabet does not disclose a U.S. pay figure. Its proxy reports a median worker pay of $310,826 measured across ALL of its employees worldwide (its own filed methodology: every employee except the CEO, counted Dec 31, 2025). Per the rule's hierarchy the worldwide figure is used and flagged: \"U.S. pay figure not disclosed — scored on the worldwide figure.\" The same figure is used in all three questions and in the CEO ratio.", DEF26),
-          n("Sources: DEF 14A 2026, pay-ratio section (p.56); MIT Living Wage; 10-K FY2025 (net income $132,170M; 190,820 employees).", K25),
-          n("PRINTED FACT — NOT SCORED (M's decision 2026-10-11; standard for EVERY company card): \"Alphabet (Google) is not among the employers reported in the U.S. GAO's count of workers on food stamps (SNAP) or Medicaid (report GAO-26-108703): it does not appear in any of the report's top-25 employer tables for the 11 reporting states (September 2025). The GAO lists only each state's 25 largest employers per program, so not appearing in a table does not mean zero. No national count exists.\" Printed as a government-counted fact with its limits attached; never enters any score.", GAO),
+          { text: "Sources: [[DEF 14A 2026]], pay-ratio section (p.56); [[MIT Living Wage]]; [[10-K FY2025]] (net income $132,170M; 190,820 employees).", kind: "note", links: [{ text: "DEF 14A 2026", url: DEF26 }, { text: "MIT Living Wage", url: MIT }, { text: "10-K FY2025", url: K25 }] },
+          { text: "PRINTED FACT — NOT SCORED (M's decision 2026-10-11; standard for EVERY company card): \"Alphabet (Google) is not among the employers reported in the U.S. GAO's count of workers on food stamps (SNAP) or Medicaid (report [[GAO-26-108703]]): it does not appear in any of the report's top-25 employer tables for the 11 reporting states (September 2025). The GAO lists only each state's 25 largest employers per program, so not appearing in a table does not mean zero. No national count exists.\" Printed as a government-counted fact with its limits attached; never enters any score.", kind: "note", links: [{ text: "GAO-26-108703", url: GAO }] },
         ] },
       ],
       factors: {
@@ -90,8 +96,8 @@ export const ALPHABET_CARD: CompanyCard = {
         "Class W — counts in no company's coverage. The underlying fact stands: Alphabet does not file a U.S. headcount. The 10-K discloses only the worldwide total (190,820), no U.S. split, no U.S. full-time share, no contractor count. (The worldwide change, +7,497 in 2025, is context only — the locked rule rejects it for scoring: hiring that may be outside the U.S. cannot earn credit in a U.S. pillar.)",
       blocks: [
         { title: "U.S. Workforce Commitment — not yet measured", lines: [
-          n("PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 5,512 H-1B petitions for Alphabet in FY2025 — 1,042 initial + 4,470 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" The H-1B Intensity factor scores only where a U.S. headcount is filed; Alphabet files none, so the factor does not score and this count is the standing record (Clause 7(iii))."),
-          n("Source: USCIS H-1B Employer Data Hub, FY2025 employer file (read under Google LLC; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)."),
+          { ...n("PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved [[5,512]] H-1B petitions for Alphabet in FY2025 — 1,042 initial + 4,470 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" The H-1B Intensity factor scores only where a U.S. headcount is filed; Alphabet files none, so the factor does not score and this count is the standing record (Clause 7(iii))."), links: [{ text: "5,512", url: USCIS }] },
+          { ...n("Source: [[USCIS H-1B Employer Data Hub]], FY2025 employer file (read under Google LLC; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)."), links: [{ text: "USCIS H-1B Employer Data Hub", url: USCIS }] },
         ] },
       ],
       factors: {
@@ -141,7 +147,7 @@ export const ALPHABET_CARD: CompanyCard = {
         n("Profit context: Alphabet was profitable in every year of the window (net income $73.8B → $100.1B → $132.2B), so no loss-year discount. The January 2023 round (12,000 jobs) is older than the 3-year window and is not counted — it is shown here as pattern history only."),
         n("The count, stated exactly as the evidence supports it: Google does not announce totals. The January 2024 program alone was reported at over 1,000 roles from the company's own announcements (California WARN notices for the program covered 702 Bay Area workers); adding every documented round since — \"Core\" teams ≥200 (Apr–May 2024), Platforms & Devices \"hundreds\" (Apr 2025), Global Business ~200 (May 2025), Cloud design 100+ (Oct 2025), Washington WARN 52 (Aug 2026), and several rounds whose counts the company did not disclose (finance/real estate Apr 2024; Cloud Feb 2025 and summer 2026) — the total stays inside the 1,000–4,999 band, and Alphabet's worldwide headcount GREW over the window (182,502 → 183,323 → 190,820). The pillar scores the band the records prove, never an invented total."),
         n("Inside context (never scored): in September 2025 more than 200 AI-ratings roles held by contractors at a vendor (GlobalLogic) were eliminated — a vendor's workers, not Alphabet's, so they are not in this count. Voluntary exit programs (offered in several divisions in 2025) are offers, not eliminations, and are not counted either."),
-        n("Sources: company announcements and confirmations (TechCrunch, Reuters, CNBC, Bloomberg, AP); CA EDD and WA ESD WARN records as cited in the evidence pack; 10-K FY2025 (headcount, buybacks, profits).", K25),
+        { text: "Sources: company announcements and confirmations (TechCrunch, Reuters, CNBC, Bloomberg, AP); [[CA EDD]] and [[WA ESD WARN records]] as cited in the evidence pack; 10-K FY2025 (headcount, buybacks, profits).", kind: "note", links: [{ text: "CA EDD", url: CA_WARN }, { text: "WA ESD WARN records", url: WA_WARN }] },
       ] }],
       factors: {
         layoff_severity: { status: "scored", note: "Inside Layoff Rule v1.0: verified band 1,000–4,999 in the window (floor: the January 2024 program alone at >1,000, CA WARN 702 Bay Area; adding every documented round since — \"Core\" ≥200, Platforms & Devices \"hundreds,\" Global Business ~200, Cloud design 100+, WA WARN 52, plus rounds with no disclosed count — stays inside the band; headcount GREW 182,502 → [[190,820]] over the window) → −25; segment share → −0 (cuts spread across many units; no single disclosed segment cut reaches 5%).", links: [{ text: "190,820", url: K25 }] },
@@ -215,7 +221,7 @@ export const ALPHABET_CARD: CompanyCard = {
         t("= Total political spending", "$18,034,672"),
         t("→ On the published scale ($10M = 35 · $20M = 20)", "23"),
         n("Limitation printed with the score: federal lobbying + federal PAC only — state lobbying and trade-group spending are not counted."),
-        n("Sources: OpenSecrets client summary, Alphabet Inc, cycle 2025 (id D000067823); FEC committee C00428623, GOOGLE LLC NETPAC (2023–24 cycle totals).", OS),
+        { text: "Sources: [[OpenSecrets client summary]], Alphabet Inc, cycle 2025 (id D000067823); [[FEC committee C00428623]], GOOGLE LLC NETPAC (2023–24 cycle totals).", kind: "note", links: [{ text: "OpenSecrets client summary", url: OS }, { text: "FEC committee C00428623", url: FEC }] },
       ] }],
       factors: {
         lobbying_spend: { status: "scored", note: "Lobbying Rule v1.1: [[$16,620,000]] federal lobbying, calendar 2025 (OpenSecrets client summary, Alphabet Inc, id D000067823; cross-checked against the same page's annual-trends data: 2023 [[$14,450,000]] · 2024 [[$14,860,000]] · 2025 [[$16,620,000]]; [[109]] lobbyists in 2025; no subsidiary split shown for this client).", links: [{ text: "$16,620,000", url: OS }, { text: "$14,450,000", url: OS }, { text: "$14,860,000", url: OS }, { text: "109", url: OS }] },
@@ -226,13 +232,17 @@ export const ALPHABET_CARD: CompanyCard = {
   sources: [
     { label: "DEF 14A 2026 (filed 2026-04-24, accession 0001308179-26-000342)", url: DEF26 },
     { label: "Form 10-K FY2025 (filed 2026-02-05, accession 0001652044-26-000018)", url: K25 },
-    { label: "Form 10-K FY2024 (accession 0001652044-25-000014) — Dec 31, 2024 headcount 183,323." },
+    { label: "Form 10-K FY2024 (accession 0001652044-25-000014) — Dec 31, 2024 headcount 183,323.", url: K24 },
     { label: "OpenSecrets — Alphabet Inc, federal lobbying client summary, cycle 2025 (id D000067823)", url: OS },
     { label: "FEC — GOOGLE LLC NETPAC (committee C00428623), 2023–24 cycle totals", url: FEC },
     { label: "U.S. Government Accountability Office — GAO-26-108703 (June 2026; reissued Aug 24, 2026): Alphabet/Google appears in none of the top-25 employer tables (printed fact, not scored)", url: GAO },
     { label: "U.S. Department of Labor — TAA phaseout-termination status pages; \"TAA Termination Impacts: By the Numbers\" fact sheet, Table 1 (petitions CA-16, GA-5, OR-1)", url: DOL },
-    { label: "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md)." },
-    { label: "Layoff records: company announcements/confirmations and WARN filings as itemised in ALPHABET_EVIDENCE_PACK.md §3 (TechCrunch, Reuters, CNBC, Bloomberg, AP; CA EDD; WA ESD)." },
+    { label: "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md).", url: MIT },
+    { label: "BLS typical pay — $62,608/year (2025: $1,204/week x 52).", url: BLS },
+    { label: "USCIS H-1B Employer Data Hub, FY2025 employer file (Google LLC; read 2026-10-22).", url: USCIS },
+    { label: "California WARN notices — Employment Development Department (EDD) WARN reports and notice index.", url: CA_WARN },
+    { label: "Washington WARN notices — Employment Security Department (ESD) WARN requirements and notice database.", url: WA_WARN },
+    { label: "Layoff records: company announcements/confirmations as itemised in ALPHABET_EVIDENCE_PACK.md §3 (TechCrunch, Reuters, CNBC, Bloomberg, AP)." },
   ],
   rules:
     "Methodology v1.0 · Worker Pay Fairness Rule v1.3 · Layoff Rule v1.0 · CEO Pay Rule v2.0 · Lobbying Rule v1.1 · Insufficient-Data Rule v1.2 · U.S. Workforce Rule v1.2 · Score Bands v1.0 · Weights Defense v1.0 · Ideology Operating Rules v1 · Local Economic Contribution Rule v1.0 · Outsourcing + Production Abroad Rule v1.0",

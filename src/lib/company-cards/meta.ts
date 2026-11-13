@@ -69,7 +69,7 @@ export const META_CARD: CompanyCard = {
   "pillars": {
     "worker_standards": {
       "score": 79,
-      "sentence": "Its typical worker worldwide earns [[$388,200]] a year — far above the cost of living ($49,246) and the typical U.S. worker's pay ($62,608); against [[$766,631]] of profit per employee, the worker's share of the split is 34%.",
+      "sentence": "Its typical worker worldwide earns [[$388,200]] a year — far above the cost of living ($49,246) and the typical U.S. worker's pay ([[$62,608]]); against [[$766,631]] of profit per employee, the worker's share of the split is 34%.",
       "sentenceLinks": [
         {
           "text": "$388,200",
@@ -78,7 +78,8 @@ export const META_CARD: CompanyCard = {
         {
           "text": "$766,631",
           "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
-        }
+        },
+      { "text": "$62,608", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" },
       ],
       "footnote": "Scored on pay, the only factor in this pillar verifiable from filings — the same basis as every company. The pay figure is worldwide — Meta files no U.S.-only median; flagged, per the rule's hierarchy.",
       "rule": "Worker Pay Fairness Rule v1.3; pay factor only",
@@ -104,13 +105,15 @@ export const META_CARD: CompanyCard = {
           "title": "QUESTION 2 — Is it what other Americans make?",
           "lines": [
             {
-              "text": "[[$388,200]] (worker earns) → $62,608 (typical American worker makes, BLS 2025: $1,204/week x 52) → 6.20",
+              "text": "[[$388,200]] (worker earns) → [[$62,608]] (typical American worker makes, BLS 2025: [[$1,204/week]] x 52) → 6.20",
               "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
               "links": [
                 {
                   "text": "$388,200",
                   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
-                }
+                },
+              { "text": "$62,608", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" },
+              { "text": "$1,204/week", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" },
               ],
               "result": "score 100",
               "kind": "step"
@@ -188,7 +191,7 @@ export const META_CARD: CompanyCard = {
               "kind": "note"
             },
             {
-              "text": "Sources: DEF 14A 2026 pay-ratio section; 10-K FY2025 (net income [[$60,458M]]; [[78,865]] employees); MIT Living Wage national benchmark; BLS 2025.",
+              "text": "Sources: [[DEF 14A 2026]] pay-ratio section; [[10-K FY2025]] (net income [[$60,458M]]; [[78,865]] employees); [[MIT Living Wage national benchmark]]; [[BLS 2025]].",
               "links": [
                 {
                   "text": "$60,458M",
@@ -197,7 +200,11 @@ export const META_CARD: CompanyCard = {
                 {
                   "text": "78,865",
                   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
-                }
+                },
+              { "text": "DEF 14A 2026", "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm" },
+              { "text": "10-K FY2025", "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm" },
+              { "text": "MIT Living Wage national benchmark", "url": "https://livingwage.mit.edu/" },
+              { "text": "BLS 2025", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" },
               ],
               "kind": "note"
             }
@@ -346,8 +353,9 @@ export const META_CARD: CompanyCard = {
               "kind": "note"
             },
             {
-              "text": "PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 6,384 H-1B petitions for Meta Platforms in FY2025 — 1,554 initial + 4,830 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" The H-1B Intensity factor scores only where a U.S. headcount is filed; Meta files none, so the factor does not score and this count is the standing record (Clause 7(iii)). Source: USCIS H-1B Employer Data Hub, FY2025 employer file (Meta Platforms Inc; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md).",
-              "kind": "note"
+              "text": "PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 6,384 H-1B petitions for Meta Platforms in FY2025 — 1,554 initial + 4,830 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" The H-1B Intensity factor scores only where a U.S. headcount is filed; Meta files none, so the factor does not score and this count is the standing record (Clause 7(iii)). Source: [[USCIS H-1B Employer Data Hub]], FY2025 employer file (Meta Platforms Inc; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md).",
+              "kind": "note",
+              "links": [{ "text": "USCIS H-1B Employer Data Hub", "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" }],
             }
           ]
         },
@@ -1238,8 +1246,9 @@ export const META_CARD: CompanyCard = {
               "kind": "note"
             },
             {
-              "text": "Sources: OpenSecrets client summary, Meta (id D000033563), cycle 2025; OpenSecrets — META PLATFORMS, INC. PAC (FEC C00502906), 2023–24 cycle.",
-              "kind": "note"
+              "text": "Sources: [[OpenSecrets client summary]], Meta (id D000033563), cycle 2025; [[OpenSecrets — META PLATFORMS, INC. PAC]] (FEC C00502906), 2023–24 cycle.",
+              "kind": "note",
+              "links": [{ "text": "OpenSecrets client summary", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000033563" }, { "text": "OpenSecrets — META PLATFORMS, INC. PAC", "url": "https://www.opensecrets.org/political-action-committees-pacs/meta/C00502906/summary/2024" }],
             }
           ]
         },
@@ -1300,7 +1309,8 @@ export const META_CARD: CompanyCard = {
       "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
     },
     {
-      "label": "OpenSecrets — Meta, federal lobbying client (id D000033563), cycle 2025"
+      "label": "OpenSecrets — Meta, federal lobbying client (id D000033563), cycle 2025",
+      "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000033563"
     },
     {
       "label": "OpenSecrets — META PLATFORMS, INC. PAC (FEC C00502906), 2023–24 cycle summary",
@@ -1311,16 +1321,27 @@ export const META_CARD: CompanyCard = {
       "url": "https://www.gao.gov/assets/890/888620.pdf"
     },
     {
-      "label": "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md)."
+      "label": "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md).",
+      "url": "https://livingwage.mit.edu/"
     },
     {
-      "label": "BLS median full-time weekly earnings 2025: $1,204/week → $62,608/year."
+      "label": "BLS median full-time weekly earnings 2025: $1,204/week → $62,608/year.",
+      "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm"
     },
     {
-      "label": "Layoff announcements and WARN records as itemized in META_EVIDENCE_PACK.md §3."
+      "label": "California WARN notices — Employment Development Department (EDD) WARN reports and notice index.",
+      "url": "https://edd.ca.gov/en/jobs_and_training/layoff_services_warn"
     },
     {
-      "label": "USCIS H-1B Employer Data Hub, FY2025 employer file (Meta Platforms Inc; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)."
+      "label": "Washington WARN notices — Employment Security Department (ESD) WARN requirements and notice database.",
+      "url": "https://esd.wa.gov/employer-requirements/layoffs-and-employee-notifications/warn-requirements"
+    },
+    {
+      "label": "Layoff announcements as itemized in META_EVIDENCE_PACK.md §3."
+    },
+    {
+      "label": "USCIS H-1B Employer Data Hub, FY2025 employer file (Meta Platforms Inc; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md).",
+      "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub"
     }
   ],
   "rules": "Methodology v1.0 · Layoff Rule v1.0 · CEO Pay Rule v2.0 · Lobbying Rule v1.1 · Insufficient-Data Rule v1.2 · Worker Pay Fairness Rule v1.3 · U.S. Workforce Rule v1.2 · Weights Defense v1.0 · Score Bands v1.0 · Show-Your-Work Spec v1.0 · Local Economic Contribution Rule v1.0 · Outsourcing + Production Abroad Rule v1.0"

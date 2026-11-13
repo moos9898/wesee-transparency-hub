@@ -80,9 +80,10 @@ function CardPillarItem({ pillarKey, label, weight, cp }: { pillarKey: string; l
               <div className="h-full rounded-full transition-[width] duration-1000" style={{ width: `${value}%`, backgroundColor: scoreColor(value) }} />
             )}
           </div>
-          <p className="mt-2 text-left text-xs font-normal text-muted-foreground">{renderLinkedText(cp.sentence, cp.sentenceLinks)}</p>
+          <span className="mt-1.5 block text-left text-[10px] font-normal text-muted-foreground">Tap to see how this is calculated</span>
         </div>
       </AccordionTrigger>
+      <p className="pb-2 text-left text-xs font-normal text-muted-foreground">{renderLinkedText(cp.sentence, cp.sentenceLinks)}</p>
       <AccordionContent>
         <div className="space-y-3 pt-2 text-sm">
           {cp.footnote && <p className="text-[12px] italic text-muted-foreground">{renderLinkedText(cp.footnote, cp.footnoteLinks)}</p>}

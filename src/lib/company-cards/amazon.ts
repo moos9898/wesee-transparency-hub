@@ -91,9 +91,10 @@ export const AMAZON_CARD: CompanyCard = {
     worker_standards: {
       score: 62,
       sentence:
-        "Its typical full-time worker in the U.S. earns [[$53,211]] a year — above the cost of living ($49,246), but below what the typical U.S. worker makes ($62,608).",
+        "Its typical full-time worker in the U.S. earns [[$53,211]] a year — above the cost of living ($49,246), but below what the typical U.S. worker makes ([[$62,608]]).",
       sentenceLinks: [
         { text: "$53,211", url: "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm" },
+      { text: "$62,608", url: "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" },
       ],
       footnote: "Scored on pay, the only factor in this pillar verifiable from filings.",
       rule: "Worker Pay Fairness Rule v1.3; pay factor only",
@@ -102,7 +103,7 @@ export const AMAZON_CARD: CompanyCard = {
           { ...s("[[$53,211]] (worker earns) → $49,246 (worker needs to live on) → $1.08 earned per $1 needed", "score 76"), links: [{ text: "$53,211", url: "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm" }] },
         ] },
         { title: "QUESTION 2 — Is it what other Americans make?", lines: [
-          { ...s("[[$53,211]] (worker earns) → $62,608 (typical American worker makes, BLS 2025: $1,204/week x 52) → 0.85", "score 35"), links: [{ text: "$53,211", url: "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm" }] },
+          { ...s("[[$53,211]] (worker earns) → [[$62,608]] (typical American worker makes, BLS 2025: [[$1,204/week]] x 52) → 0.85", "score 35"), links: [{ text: "$53,211", url: "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm" }, { text: "$62,608", url: "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" }, { text: "$1,204/week", url: "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" }] },
         ] },
         { title: "QUESTION 3 — How is the money split?", lines: [
           { ...s("[[$77.7B]] (Amazon's profit for the whole year) ÷ [[1,576,000]] (workers) = $49,283 (profit per worker — what the company keeps for each worker it has; a measuring number, not a payment)"), links: [{ text: "$77.7B", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }, { text: "1,576,000", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }] },
@@ -111,7 +112,7 @@ export const AMAZON_CARD: CompanyCard = {
         { title: "FINAL LINE", lines: [
           t("76 + 35 + 74 → ÷ 3", "62"),
           c("Dignity gate: not triggered — pay is above the national living wage."),
-          { ...n("Sources: DEF 14A 2026 pay-ratio section; MIT Living Wage; 10-K FY2025 (net income [[$77,670M]]; [[1,576,000]] employees)."), links: [{ text: "$77,670M", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }, { text: "1,576,000", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }] },
+          { ...n("Sources: [[DEF 14A 2026]] pay-ratio section; [[MIT Living Wage]]; [[10-K FY2025]] (net income [[$77,670M]]; [[1,576,000]] employees)."), links: [{ text: "DEF 14A 2026", url: "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm" }, { text: "MIT Living Wage", url: "https://livingwage.mit.edu/" }, { text: "10-K FY2025", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }, { text: "$77,670M", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }, { text: "1,576,000", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }] },
         ] },
         { title: "PRINTED FACT — NOT SCORED (U.S. GAO, report GAO-26-108703)", lines: [
           { ...n("\"In the 11 states that report this, [[12,346]] of Amazon's workers received food stamps (SNAP) and [[11,338]] were on Medicaid (U.S. GAO, report GAO-26-108703, snapshot September 2025). No national count exists.\""), links: [{ text: "12,346", url: "https://www.gao.gov/assets/890/888620.pdf" }, { text: "11,338", url: "https://www.gao.gov/assets/890/888620.pdf" }] },
@@ -138,7 +139,7 @@ export const AMAZON_CARD: CompanyCard = {
       rule: "U.S. Workforce Rule v1.2 (Class W — counts in no company's coverage)",
       blocks: [
         { title: "PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5)", lines: [
-          n("USCIS approved 16,892 H-1B petitions for Amazon in FY2025 — 3,687 initial + 13,205 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year."),
+          { ...n("USCIS approved [[16,892]] H-1B petitions for Amazon in FY2025 — 3,687 initial + 13,205 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year."), links: [{ text: "16,892", url: "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" }] },
           { ...n("The count sums the [[nine]] subsidiaries on Amazon's Form 10-K Exhibit 21.1 — Amazon.com Services LLC · Amazon Web Services, Inc. · Amazon Data Services, Inc. · Amazon Technologies, Inc. · Amazon.com Sales, Inc. · Amazon.com NV Investment Holdings LLC · Amazon US Services LLC · A100 ROW, Inc. · Day One Insurance, Inc."), links: [{ text: "nine", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231xex211.htm" }] },
           n("Three of the nine had FY2025 Hub rows: Services LLC 3,003 initial + 10,262 continuing (both Hub punctuation variants summed) + Web Services 511 + 2,390 + Data Services 173 + 553 = 3,687 initial + 13,205 continuing; Technologies is a Hub name with no FY2025 rows, and the other five do not appear as Hub names."),
           n("Methodology note: Amazon-family petitioners NOT on the filed exhibit — Amazon Development Center U S Inc, Audible, Twitch, and Whole Foods — had 2,173 approvals counted in the sweep, and they are NOT in the 16,892: Clause 2 sums the filed list only, and WeSee takes the filing as published. Counting them would take a rule change, not a correction."),
@@ -191,7 +192,7 @@ export const AMAZON_CARD: CompanyCard = {
         t("=", "10"),
         { ...n("The cuts happened in profitable years ([[$59.2B]] in 2024, record [[$77.7B]] in 2025), so no discount."), links: [{ text: "$59.2B", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }, { text: "$77.7B", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }] },
         n("The 27,000+ cut in 2022–23 is older than the 3-year window and is not counted."),
-        n("Sources: company announcements; WA WARN notice 2025-10-28 (2,303 WA employees — a state slice used to verify, never presented as the national count); 10-K FY2025."),
+        { ...n("Sources: company announcements; WA WARN notice 2025-10-28 (2,303 WA employees — a state slice used to verify, never presented as the national count); [[10-K FY2025]]."), links: [{ text: "10-K FY2025", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" }] },
       ] }],
       factors: {
         layoff_severity: { status: "scored", note: "Inside Layoff Rule v1.0 (count + segment share)" },
@@ -279,7 +280,7 @@ export const AMAZON_CARD: CompanyCard = {
         t("= Total political spending", "$20,326,053"),
         t("→ On the published scale ($20M = 20 · $50M = 10)", "20"),
         n("Limitation printed with the score: federal lobbying + federal PAC only — state lobbying and trade-group spending are not counted."),
-        n("Sources: OpenSecrets client summary, Amazon.com Inc, cycle 2025; FEC committee C00360354 (2023–24 cycle totals)."),
+        { ...n("Sources: [[OpenSecrets client summary]], Amazon.com Inc, cycle 2025; [[FEC committee C00360354]] (2023–24 cycle totals)."), links: [{ text: "OpenSecrets client summary", url: "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000023883" }, { text: "FEC committee C00360354", url: "https://www.fec.gov/data/committee/C00360354/?cycle=2024&tab=summary" }] },
       ] }],
       factors: {
         lobbying_spend: { status: "scored", note: "Lobbying Rule v1.1: [[$18,865,000]] lobbying + $1,461,053 PAC = $20,326,053 → 20", links: [{ text: "$18,865,000", url: "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000023883" }] },
@@ -291,11 +292,12 @@ export const AMAZON_CARD: CompanyCard = {
     { label: "DEF 14A 2026 (filed 2026-04-09, accession 0001104659-26-041026)", url: "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm" },
     { label: "Form 10-K FY2025 (accession 0001018724-26-000004)", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm" },
     { label: "Form 10-K FY2025, Exhibit 21.1 — List of Significant Subsidiaries (9 subsidiaries, as filed)", url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231xex211.htm" },
-    { label: "USCIS H-1B Employer Data Hub, FY2025 employer file (read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)" },
+    { label: "USCIS H-1B Employer Data Hub, FY2025 employer file (read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)", url: "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" },
     { label: "U.S. Government Accountability Office — GAO-26-108703 (June 2026; reissued Aug 24, 2026): workers on SNAP/Medicaid by employer, 11 reporting states, snapshot September 2025 (printed fact, not scored)", url: "https://www.gao.gov/assets/890/888620.pdf" },
     { label: "OpenSecrets — Amazon.com Inc, federal lobbying summary, cycle 2025", url: "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000023883" },
     { label: "MIT Living Wage Calculator — King County, WA (context only)", url: "https://livingwage.mit.edu/counties/53033" },
-    { label: "Washington State WARN notices (Employment Security Department) — Amazon notice 2025-10-28" },
+    { label: "U.S. Bureau of Labor Statistics — median weekly earnings $1,204 in 2025 → $62,608/year (TED, 2026).", url: "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" },
+    { label: "Washington State WARN notices (Employment Security Department) — Amazon notice 2025-10-28", url: "https://esd.wa.gov/employer-requirements/layoffs-and-employee-notifications/warn-requirements" },
   ],
   rules:
     "Methodology v1.0 · Layoff Rule v1.0 · CEO Pay Rule v2.0 · Lobbying Rule v1.1 · Insufficient-Data Rule v1.2 · Worker Pay Fairness Rule v1.3 · U.S. Workforce Rule v1.2 · Local Economic Contribution Rule v1.0 · Outsourcing + Production Abroad Rule v1.0 · Weights Defense v1.0 · Show-Your-Work Spec v1.0",

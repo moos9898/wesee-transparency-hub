@@ -413,3 +413,47 @@ it("links every marked stat in all ten cards", () => {
     }
   }
 });
+
+// Expand-in-place fix (2026-11-12, M's voice request): the BLS benchmark,
+// MIT calculator, USCIS Hub and WARN pages must be real links on every card,
+// and the stale/wrong identifiers reported on the live page must not exist.
+const BLS_TED_URL = "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm";
+const USCIS_HUB_URL = "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub";
+const GAO_PDF_URL = "https://www.gao.gov/assets/890/888620.pdf";
+
+describe("expand-in-place source links (2026-11-12)", () => {
+  const ALL = [AMAZON_CARD, COSTCO_CARD, APPLE_CARD, WALMART_CARD, META_CARD, MICROSOFT_CARD, ALPHABET_CARD, NVIDIA_CARD, BERKSHIRE_CARD, JPMORGAN_CARD];
+
+  it("links the BLS $62,608 benchmark on every card's Worker Standards pillar", () => {
+    for (const card of ALL) {
+      const worker = JSON.stringify(card.pillars.worker_standards);
+      expect(worker).toContain("[[$62,608]]");
+      expect(worker).toContain(BLS_TED_URL);
+    }
+  });
+
+  it("carries the BLS, MIT and USCIS Hub pages in every card's Evidence Records", () => {
+    for (const card of ALL) {
+      const urls = card.sources.map(s => s.url ?? "");
+      expect(urls).toContain(BLS_TED_URL);
+      expect(urls.some(u => u.startsWith("https://livingwage.mit.edu/"))).toBe(true);
+      expect(urls).toContain(USCIS_HUB_URL);
+    }
+  });
+
+  it("points every GAO source at the GAO-26-108703 PDF, never the old report", () => {
+    for (const card of ALL) {
+      for (const s of card.sources) {
+        if (s.label.includes("GAO")) expect(s.url).toBe(GAO_PDF_URL);
+      }
+      expect(JSON.stringify(card)).not.toContain("107843");
+      expect(JSON.stringify(card)).not.toContain("D000032298");
+    }
+  });
+
+  it("links the USCIS H-1B Hub from every card's printed H-1B line", () => {
+    for (const card of ALL) {
+      expect(JSON.stringify(card.pillars.us_workforce_commitment)).toContain(USCIS_HUB_URL);
+    }
+  });
+});

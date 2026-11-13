@@ -22,6 +22,10 @@ const BRK_DEF14A =
 const BRK_OPENSECRETS =
   "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000021757";
 const GAO_PDF = "https://www.gao.gov/assets/890/888620.pdf";
+const BLS = "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm";
+const MIT = "https://livingwage.mit.edu/";
+const USCIS = "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub";
+const CA_WARN = "https://edd.ca.gov/en/jobs_and_training/layoff_services_warn";
 
 const s = (text: string, result?: string): StepLine => ({ text, result, kind: "step" });
 const t = (text: string, result?: string): StepLine => ({ text, result, kind: "total" });
@@ -68,7 +72,7 @@ export const BERKSHIRE_CARD: CompanyCard = {
           { text: "[[$93,709]] (worker earns) → $49,246 (worker needs to live on) → $1.90 earned per $1 needed", result: "score 100", kind: "step", url: BRK_DEF14A, links: [{ text: "$93,709", url: BRK_DEF14A }] },
         ] },
         { title: "QUESTION 2 — Is it what other Americans make?", lines: [
-          { text: "[[$93,709]] (worker earns) → $62,608 (typical American worker makes, BLS 2025: $1,204/week x 52) → 1.50", result: "score 100", kind: "step", url: BRK_DEF14A, links: [{ text: "$93,709", url: BRK_DEF14A }] },
+          { text: "[[$93,709]] (worker earns) → [[$62,608]] (typical American worker makes, BLS 2025: [[$1,204/week]] x 52) → 1.50", result: "score 100", kind: "step", url: BRK_DEF14A, links: [{ text: "$93,709", url: BRK_DEF14A }, { text: "$62,608", url: BLS }, { text: "$1,204/week", url: BLS }] },
         ] },
         { title: "QUESTION 3 — How is the money split?", lines: [
           { text: "First show where [[$172,685]] comes from — it is one division, never present it bare:", kind: "note", url: BRK_10K, links: [{ text: "$172,685", url: BRK_10K }] },
@@ -83,7 +87,7 @@ export const BERKSHIRE_CARD: CompanyCard = {
           { text: "Q3 honesty note: Berkshire's profit per worker is unusually large because its profit includes returns on a stock portfolio of more than [[$300B]], spread over the operating workforce — and 2025's profit was itself cut by [[$9.6B]] of losses on holdings in other companies. On Berkshire's own preferred \"operating earnings\" measure ([[$44.4B]]), profit per worker would be [[$114,493]] and this question would score 60. The rule uses the filed profit figure for every company, so 40 stands; the alternative is shown, never substituted.", kind: "note", url: BRK_10K, links: [{ text: "$300B", url: BRK_10K }, { text: "$9.6B", url: BRK_10K }, { text: "$44.4B", url: BRK_10K }, { text: "$114,493", url: BRK_10K }] },
           { text: "PRINTED FACT — NOT SCORED (M's decision 2026-10-11; standard for EVERY company card): \"Berkshire Hathaway does not appear in the GAO's employer tables (report GAO-26-108703, [[11]] reporting states, September 2025). The GAO lists employers under their own names — Berkshire's workers are employed by its subsidiaries, such as GEICO, BNSF Railway, McLane, and Pilot — so a Berkshire company would appear under the subsidiary's name, never the parent's; a full-text search of the report found none of those names in any state's top-25 table either. The GAO lists only each state's [[25]] largest employers per program, so not appearing in a table does not mean zero. No national count exists.\"", kind: "note", url: GAO_PDF, links: [{ text: "11", url: GAO_PDF }, { text: "25", url: GAO_PDF }] },
           n("Printed as a government-counted fact with its limits attached; never enters any score (counts measure company size as much as pay, the 11 states are not a national sample, and eligibility is household-based)."),
-          { text: "Sources: DEF 14A 2026 pay-ratio section; MIT Living Wage; 10-K FY2025 (net earnings [[$66,968M]]; ~[[387,800]] employees).", kind: "note", url: BRK_10K, links: [{ text: "$66,968M", url: BRK_10K }, { text: "387,800", url: BRK_10K }] },
+          { text: "Sources: [[DEF 14A 2026]] pay-ratio section; [[MIT Living Wage]]; [[10-K FY2025]] (net earnings [[$66,968M]]; ~[[387,800]] employees).", kind: "note", url: BRK_10K, links: [{ text: "DEF 14A 2026", url: BRK_DEF14A }, { text: "MIT Living Wage", url: MIT }, { text: "10-K FY2025", url: BRK_10K }, { text: "$66,968M", url: BRK_10K }, { text: "387,800", url: BRK_10K }] },
         ] },
       ],
       factors: {
@@ -102,7 +106,8 @@ export const BERKSHIRE_CARD: CompanyCard = {
         { text: "80%", url: BRK_10K },
       ],
       footnote:
-        "PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 513 H-1B petitions for Berkshire Hathaway in FY2025 — 127 initial + 386 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" \"Berkshire's count sums its Exhibit 21 subsidiaries, which petition under their own names; subsidiaries the filing does not list are not counted, so this count is a floor.\" The H-1B Intensity factor scores only where a U.S. headcount count is filed (Clause 5); Berkshire files a share (approximately 80%) but no count, so the factor does not score, the pillar re-normalizes without it (stays 85), and this count is the standing record (Clause 7(iii)). Source: USCIS H-1B Employer Data Hub, FY2025 employer file — summed over the Petitioner Name Schedule (parent + 275 Exhibit 21 subsidiaries; sweep completed 2026-10-22).",
+        "PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 513 H-1B petitions for Berkshire Hathaway in FY2025 — 127 initial + 386 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" \"Berkshire's count sums its Exhibit 21 subsidiaries, which petition under their own names; subsidiaries the filing does not list are not counted, so this count is a floor.\" The H-1B Intensity factor scores only where a U.S. headcount count is filed (Clause 5); Berkshire files a share (approximately 80%) but no count, so the factor does not score, the pillar re-normalizes without it (stays 85), and this count is the standing record (Clause 7(iii)). Source: [[USCIS H-1B Employer Data Hub]], FY2025 employer file — summed over the Petitioner Name Schedule (parent + 275 Exhibit 21 subsidiaries; sweep completed 2026-10-22).",
+      footnoteLinks: [{ text: "USCIS H-1B Employer Data Hub", url: USCIS }],
       rule: "U.S. Workforce Rule v1.3; scored on Domestic Hiring, trend rule — growth unmeasurable, no U.S. count filed for any year",
       blocks: [
         { title: "U.S. Workforce Commitment — 85", lines: [
@@ -110,9 +115,9 @@ export const BERKSHIRE_CARD: CompanyCard = {
           t("FACTOR LINE: 85 = the pillar score (other factors not disclosed: full-time share is not filed; contractor share is not filed)", "85"),
           { text: "What is NOT done: the score is not estimated from a count that was never filed, and no U.S. total is assembled from segment counts (BNSF ~[[35,000]] · insurance ~[[42,600]] · Pilot ~[[29,300]] · McLane ~[[24,900]], as filed — they mix countries and do not add up to a U.S. total). The filing also gives [[19%]] union-represented (context only).", kind: "note", url: BRK_10K, links: [{ text: "35,000", url: BRK_10K }, { text: "42,600", url: BRK_10K }, { text: "29,300", url: BRK_10K }, { text: "24,900", url: BRK_10K }, { text: "19%", url: BRK_10K }] },
           n("Class W note: this pillar counts in Berkshire's average above, but — like every company — not in its coverage."),
-          n("PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 513 H-1B petitions for Berkshire Hathaway in FY2025 — 127 initial + 386 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" \"Berkshire's count sums its Exhibit 21 subsidiaries, which petition under their own names; subsidiaries the filing does not list are not counted, so this count is a floor.\" The H-1B Intensity factor scores only where a U.S. headcount count is filed (Clause 5); Berkshire files a share (approximately 80%) but no count, so the factor does not score, the pillar re-normalizes without it (stays 85), and this count is the standing record (Clause 7(iii)). Source: USCIS H-1B Employer Data Hub, FY2025 employer file — summed over the Petitioner Name Schedule (parent + 275 Exhibit 21 subsidiaries; PETITIONER_NAME_SCHEDULE_BERKSHIRE.md, sweep completed 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)."),
+          { ...n("PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 513 H-1B petitions for Berkshire Hathaway in FY2025 — 127 initial + 386 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" \"Berkshire's count sums its Exhibit 21 subsidiaries, which petition under their own names; subsidiaries the filing does not list are not counted, so this count is a floor.\" The H-1B Intensity factor scores only where a U.S. headcount count is filed (Clause 5); Berkshire files a share (approximately 80%) but no count, so the factor does not score, the pillar re-normalizes without it (stays 85), and this count is the standing record (Clause 7(iii)). Source: [[USCIS H-1B Employer Data Hub]], FY2025 employer file — summed over the Petitioner Name Schedule (parent + 275 Exhibit 21 subsidiaries; PETITIONER_NAME_SCHEDULE_BERKSHIRE.md, sweep completed 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)."), links: [{ text: "USCIS H-1B Employer Data Hub", url: USCIS }] },
           n("Counted: GEICO family 341 · Pilot Travel Centers 28 · Nebraska Furniture Mart 22 · Mouser Electronics 21 · McLane 18 · MidAmerican Energy 15 · Berkshire Hathaway Specialty Insurance 13 · Oriental Trading 9 · BNSF Railway 8 · PacifiCorp 8 · Lubrizol 7 · General Re 4 · Johns Manville 4 · Brooks Sports 4 · National Indemnity 3 · TTI 2 · Duracell US Operations 1 · MiTek 1 · FlightSafety International 1 · Richline Group 1 · Ben Bridge Jeweler 1 · See's Candies 1; every other Schedule name was read as no FY2025 rows or not a Hub name."),
-          n("Source: 10-K FY2025, Item 1 (Human Capital)."),
+          { text: "Source: [[10-K FY2025]], Item 1 (Human Capital).", kind: "note", links: [{ text: "10-K FY2025", url: BRK_10K }] },
         ] },
       ],
       factors: {
@@ -134,7 +139,7 @@ export const BERKSHIRE_CARD: CompanyCard = {
           { text: "TAXES: [[$13,044M]] (federal tax provision) + [[$973M]] (state tax provision) → [[$14,017M]] (U.S. tax provision) ÷ [[$77,083M]] (profit earned in the U.S. before tax) → 18.2% → on the locked scale (17% = 50 · 21% = 70)", result: "56", kind: "step", url: BRK_10K, links: [{ text: "$13,044M", url: BRK_10K }, { text: "$973M", url: BRK_10K }, { text: "$14,017M", url: BRK_10K }, { text: "$77,083M", url: BRK_10K }] },
           t("FACTOR LINE: Taxes is the only scored factor → the pillar is", "56"),
           { text: "Context (never scored): U.S. cash taxes actually paid in 2025 were [[$12,578M]]; the same effective rate was [[18.3%]] in 2024 and [[18.7%]] in 2023 — on a pooled three-year alternative the factor would score 57 (the locked rule scores the scored year, decision D-3).", kind: "note", url: BRK_10K, links: [{ text: "$12,578M", url: BRK_10K }, { text: "18.3%", url: BRK_10K }, { text: "18.7%", url: BRK_10K }] },
-          { text: "Source: 10-K FY2025, Note 20 (income taxes) and Note 26 (segment capital additions: [[$20,927M]] total, by business segment only).", kind: "note", url: BRK_10K, links: [{ text: "$20,927M", url: BRK_10K }] },
+          { text: "Source: [[10-K FY2025]], Note 20 (income taxes) and Note 26 (segment capital additions: [[$20,927M]] total, by business segment only).", kind: "note", url: BRK_10K, links: [{ text: "10-K FY2025", url: BRK_10K }, { text: "$20,927M", url: BRK_10K }] },
         ] },
       ],
       factors: {
@@ -160,7 +165,7 @@ export const BERKSHIRE_CARD: CompanyCard = {
           n("Read the profit check carefully: without the loss-year discount, this same record scores 65. The 83 is the locked rule applied exactly as written; Berkshire's \"loss\" was a paper loss on its stock portfolio, not a business that lost money. WeSee prints both numbers rather than bending the rule for one company."),
           n("The search: company announcements and trade press for the parent and its major subsidiaries, WARN records and trackers, Oct 2023 – Oct 2026. Smaller cuts found and documented in the evidence pack (BNSF furloughs of 362 in March 2024; Forest River WARN notices of 83 and about 160; Johns Manville 100) — all below the rule's 1,000-job threshold for a mass round, none counted. GEICO's chief said in May 2025 that GEICO's workforce had fallen from about 50,000 to about 20,000 over its turnaround — no dates or per-round counts were given, and the period starts before this window, so it cannot be counted as rounds; it is printed here so the limit of the count is visible."),
           n("LIMITATION: Berkshire owns 60+ companies and WARN is state-by-state — there is no single national WARN registry. The finding is stated exactly as \"one mass round found,\" never as \"only one occurred.\""),
-          { text: "Sources: GEICO's October 2023 announcement as reported by Insurance Journal, S&P Global, and Insurance Business; Berkshire's FY2022 results release (net loss $22,759M; operating earnings about $30.8B); 10-K FY2025 (2023 buybacks [[$9,171M]]); WARN records as above.", kind: "note", url: BRK_10K, links: [{ text: "$9,171M", url: BRK_10K }] },
+          { text: "Sources: GEICO's October 2023 announcement as reported by Insurance Journal, S&P Global, and Insurance Business; Berkshire's FY2022 results release (net loss $22,759M; operating earnings about $30.8B); [[10-K FY2025]] (2023 buybacks [[$9,171M]]); WARN records as above.", kind: "note", url: BRK_10K, links: [{ text: "10-K FY2025", url: BRK_10K }, { text: "$9,171M", url: BRK_10K }] },
         ] },
       ],
       factors: {
@@ -193,7 +198,7 @@ export const BERKSHIRE_CARD: CompanyCard = {
           { text: "Unusual case, printed for honesty: Berkshire's own filed ratio is also [[4.16:1]] — for every other company scored so far, the filed ratio (which counts promised stock) and WeSee's realized ratio differ. Here they match because there is no stock pay to differ over.", kind: "note", url: BRK_DEF14A, links: [{ text: "4.16:1", url: BRK_DEF14A }] },
           n("Methodology note: this pillar is scored on CEO Pay Rule v2.0 (locked 2026-10-20). Under v2.0's recalibrated top end, 4.2× still scores 100 — no change for Berkshire."),
           { text: "Context (never scored): Buffett reimbursed Berkshire [[$50,000]] for personal items in 2025.", kind: "note", url: BRK_DEF14A, links: [{ text: "$50,000", url: BRK_DEF14A }] },
-          n("Source: DEF 14A 2026, Summary Compensation Table and CEO Pay Ratio section. (The median worker's pay is Berkshire's worldwide median — see the Worker Standards note.)"),
+          { text: "Source: [[DEF 14A 2026]], Summary Compensation Table and CEO Pay Ratio section. (The median worker's pay is Berkshire's worldwide median — see the Worker Standards note.)", kind: "note", links: [{ text: "DEF 14A 2026", url: BRK_DEF14A }] },
         ] },
       ],
       factors: {
@@ -270,7 +275,7 @@ export const BERKSHIRE_CARD: CompanyCard = {
           t("→ On the published scale ($10M = 35 · $20M = 20)", "32"),
           n("Verification note, kept with the score: the OpenSecrets page for 2025 was read through its search-rendered copy after a direct visit was blocked by the site's bot check; the subsidiary parts summing exactly to the headline total is the consistency check, and a direct re-read is queued. The PAC total rests on a documented FEC search of every committee connected to Berkshire or a subsidiary — with 60+ subsidiaries, a small PAC filed under an unmatched name cannot be ruled out."),
           n("Limitation printed with the score: federal lobbying and federal PACs only — state lobbying and trade-group spending are not counted. Who received the money is never scored."),
-          n("Sources: OpenSecrets client summary, Berkshire Hathaway (id D000021757), cycle 2025; FEC committee records for the 10 PACs (ids in the evidence pack)."),
+          { text: "Sources: [[OpenSecrets client summary]], Berkshire Hathaway (id D000021757), cycle 2025; FEC committee records for the 10 PACs (ids in the evidence pack).", kind: "note", links: [{ text: "OpenSecrets client summary", url: BRK_OPENSECRETS }] },
         ] },
       ],
       factors: {
@@ -284,11 +289,14 @@ export const BERKSHIRE_CARD: CompanyCard = {
     { label: "DEF 14A 2026 (filed 2026-03-13, accession 0001193125-26-106253)", url: BRK_DEF14A },
     { label: "OpenSecrets — Berkshire Hathaway, federal lobbying client summary (id D000021757), cycle 2025", url: BRK_OPENSECRETS },
     { label: "U.S. Government Accountability Office — GAO-26-108703 (June 2026; reissued Aug 24, 2026): workers on SNAP/Medicaid by employer, 11 reporting states, snapshot September 2025 (printed fact, not scored)", url: GAO_PDF },
+    { label: "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md).", url: MIT },
+    { label: "BLS typical pay — $62,608/year (2025: $1,204/week x 52).", url: BLS },
+    { label: "USCIS H-1B Employer Data Hub, FY2025 employer file (Berkshire Hathaway; read 2026-10-22).", url: USCIS },
+    { label: "California WARN notices — Employment Development Department (EDD) WARN reports and notice index.", url: CA_WARN },
     { label: "FEC committee master file and committee totals, 2024 cycle (10 PACs, ids in the evidence pack)." },
     { label: "Berkshire Hathaway FY2022 results release (Business Wire, 2023-02-25) — FY2022 net loss attributable $22,759M (Layoff Rule profit context)." },
     { label: "GEICO announcement, October 19, 2023, as reported by Insurance Journal (2023-10-20), S&P Global Market Intelligence, Insurance Business." },
     { label: "Federal Register Doc. 2010-18186 — Johns Manville TAA certification (pattern history, printed, not scored)." },
-    { label: "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md)." },
     { label: "State WARN notices (IN / CA indexes) and national WARN trackers; announcements and trade press for major subsidiaries — one mass round found, Oct 2023 – Oct 2026." },
   ],
   rules:

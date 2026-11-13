@@ -18,6 +18,10 @@ const FEC = "https://www.fec.gov/data/committee/C00227546/?cycle=2024";
 const OS = "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000000115";
 const GAO = "https://www.gao.gov/assets/890/888620.pdf";
 const TAA = "https://www.dol.gov/agencies/eta/tradeact/petitioners/petitions/taw?num=73361";
+const BLS = "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm";
+const MIT = "https://livingwage.mit.edu/";
+const USCIS = "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub";
+const WA_WARN = "https://esd.wa.gov/employer-requirements/layoffs-and-employee-notifications/warn-requirements";
 
 const s = (text: string, result?: string, url?: string): StepLine => ({ text, result, kind: "step", url });
 const t = (text: string, result?: string, url?: string): StepLine => ({ text, result, kind: "total", url });
@@ -57,10 +61,10 @@ export const MICROSOFT_CARD: CompanyCard = {
       rule: "Worker Pay Fairness Rule v1.3; pay factor only",
       blocks: [
         { title: "QUESTION 1 — Can the worker live on the pay?", lines: [
-          s("$200,972 (worker earns) → $49,246 (worker needs to live on) → $4.08 earned per $1 needed", "score 100"),
+          { text: "[[$200,972]] (worker earns) → $49,246 (worker needs to live on) → $4.08 earned per $1 needed", result: "score 100", kind: "step", links: [{ text: "$200,972", url: DEF }] },
         ] },
         { title: "QUESTION 2 — Is it what other Americans make?", lines: [
-          s("$200,972 (worker earns) → $62,608 (typical American worker makes, BLS 2025: $1,204/week x 52) → 3.21", "score 100"),
+          { text: "[[$200,972]] (worker earns) → [[$62,608]] (typical American worker makes, BLS 2025: [[$1,204/week]] x 52) → 3.21", result: "score 100", kind: "step", links: [{ text: "$200,972", url: DEF }, { text: "$62,608", url: BLS }, { text: "$1,204/week", url: BLS }] },
         ] },
         { title: "QUESTION 3 — How is the money split?", lines: [
           n("First show where $446,632 comes from — it is one division, never present it bare:"),
@@ -71,8 +75,8 @@ export const MICROSOFT_CARD: CompanyCard = {
           t("100 + 100 + 32 → ÷ 3", "77"),
           c("Dignity gate: not triggered — pay is far above the national living wage."),
           n("Known limit, printed per the rule: profit per worker is company-wide because no company files a U.S.-only profit — the worker's side is the best disclosed pay figure, the profit side is the whole company, for every company alike."),
-          n("Sources: DEF 14A FY2025 (pay-ratio section, p.55); 10-K FY2025 (net income $101,832M; 228,000 employees).", DEF),
-          n("PRINTED FACT — NOT SCORED (M's decision 2026-10-11; standard for EVERY company card): \"Microsoft does not appear among the top-25 employers of SNAP recipients or of Medicaid enrollees in any of the 11 states the U.S. GAO counted (report GAO-26-108703, September 2025 snapshot). The GAO lists only each state's 25 largest employers per program, so not appearing in a table does not mean zero. No national count exists.\" Printed as a government-counted fact with its limits attached; never enters any score. Verified by a full-text search of the report: the name Microsoft appears nowhere in its tables.", GAO),
+          { text: "Sources: [[DEF 14A FY2025]] (pay-ratio section, p.55); [[10-K FY2025]] (net income $101,832M; 228,000 employees).", kind: "note", links: [{ text: "DEF 14A FY2025", url: DEF }, { text: "10-K FY2025", url: K25 }] },
+          { text: "PRINTED FACT — NOT SCORED (M's decision 2026-10-11; standard for EVERY company card): \"Microsoft does not appear among the top-25 employers of SNAP recipients or of Medicaid enrollees in any of the 11 states the U.S. GAO counted (report [[GAO-26-108703]], September 2025 snapshot). The GAO lists only each state's 25 largest employers per program, so not appearing in a table does not mean zero. No national count exists.\" Printed as a government-counted fact with its limits attached; never enters any score. Verified by a full-text search of the report: the name Microsoft appears nowhere in its tables.", kind: "note", links: [{ text: "GAO-26-108703", url: GAO }] },
         ] },
       ],
       factors: {
@@ -100,9 +104,9 @@ export const MICROSOFT_CARD: CompanyCard = {
           s("6,258 (USCIS-approved H-1B petitions, FY2025 — 1,394 initial + 4,864 continuing) ÷ 121,000 (filed U.S. workers) → 5.17 approvals per 100 U.S. workers → on the published scale (5 per 100 = 25 · 7.5 per 100 = 10)", "score 24"),
           t("PILLAR LINE: (Full-Time 100 × 35 + Domestic Hiring 58 × 25 + H-1B Intensity 24 × 20) ÷ 80", "68"),
           n("Not disclosed: the contractor share — Microsoft files no contractor or agency headcount, so that factor (20% of the design) is dormant, and the pillar re-normalizes over the three filed factors."),
-          n("PRINTED LINE (U.S. Workforce Rule v1.2, Clause 5 — printed on every card): \"USCIS approved 6,258 H-1B petitions for Microsoft in FY2025 — 1,394 initial + 4,864 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\""),
+          { ...n("PRINTED LINE (U.S. Workforce Rule v1.2, Clause 5 — printed on every card): \"USCIS approved [[6,258]] H-1B petitions for Microsoft in FY2025 — 1,394 initial + 4,864 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\""), links: [{ text: "6,258", url: USCIS }] },
           n("Filed-source note, printed openly: Microsoft files one year of headcount per 10-K, so the 2025 count (125,000 U.S.) is taken from the FY2025 10-K as filed — each year's count is the one that year's filing printed; no restated figure was mixed in.", K25),
-          n("Sources: 10-K FY2026, Item 1 (223,000 total · 121,000 U.S. · 102,000 international); 10-K FY2025, Item 1 (228,000 total · 125,000 U.S.).", K26),
+          { text: "Sources: [[10-K FY2026]], Item 1 (223,000 total · 121,000 U.S. · 102,000 international); [[10-K FY2025]], Item 1 (228,000 total · 125,000 U.S.).", kind: "note", links: [{ text: "10-K FY2026", url: K26 }, { text: "10-K FY2025", url: K25 }] },
         ] },
       ],
       factors: {
@@ -153,7 +157,7 @@ export const MICROSOFT_CARD: CompanyCard = {
         n("Not counted: performance-based cuts in January 2025 — the company confirmed them but announced no total, and WeSee never estimates one. A voluntary buyout offer in 2026 is not a layoff round. The 10,000 cut in January 2023 is outside the 3-year window — pattern history, not counted twice."),
         n("Profit check: every round fell in a profitable year — profits at each announcement were $72.4B (fiscal 2023), $88.1B (fiscal 2024), and $101.8B (fiscal 2025) — so no loss-year discount applies, and because this pillar is under 20, the overall score is capped at 49."),
         n("Robustness, printed so the judgment calls can be tested: leaving out both small rounds gives 21,700; adding the uncounted January 2025 cuts at their reported ceiling gives under 24,935 — the same deduction band either way."),
-        n("Sources: company memos and announcements as published (Microsoft Gaming, Jan + Sep 2024; company statements May 13 + Jul 2, 2025 and Jul 6, 2026); Washington WARN notices; 10-Ks FY2024–FY2026 (profits; buybacks $17,254M / $18,420M / $22,271M)."),
+        { text: "Sources: company memos and announcements as published (Microsoft Gaming, Jan + Sep 2024; company statements May 13 + Jul 2, 2025 and Jul 6, 2026); [[Washington WARN notices]]; 10-Ks FY2024–FY2026 (profits; buybacks $17,254M / $18,420M / $22,271M).", kind: "note", links: [{ text: "Washington WARN notices", url: WA_WARN }] },
       ] }],
       factors: {
         layoff_severity: { status: "scored", note: "Inside Layoff Rule v1.0: 22,655 counted in the window (Jan 2024 1,900 + Sep 2024 650 + May 2025 ≈6,000 + Jun 2025 305 + Jul 2025 ≈9,000 + Jul 2026 4,800) → 10,000–24,999 band −60; share 22,655 ÷ [[228,000]] = 9.9% → ≥5% → −10 (the one filed segment cross-check, Jan 2024 gaming 1,900 ÷ 22,000 = 8.6%, gives the same tier; a press-derived ~20% Xbox reading was NOT used — no filed Xbox headcount).", links: [{ text: "228,000", url: K25 }] },
@@ -232,7 +236,7 @@ export const MICROSOFT_CARD: CompanyCard = {
         t("→ On the published scale ($10M = 35 · $20M = 20)", "32"),
         n("Verified context from the same OpenSecrets page family: 2024 → $10,353,764 (company $9,424,000 + LinkedIn $869,764 + Activision Blizzard $60,000); 2023 → $10,544,433.", OS),
         n("Limitation printed with the score: federal lobbying and the federal PAC only — state lobbying and trade-group spending are not counted."),
-        n("Sources: FEC committee page C00227546 (cycle 2024); Senate LDA database via LDA_LOBBYING_REBUILD_2026-10-15.md; OpenSecrets client summary, Microsoft Corp (id D000000115).", FEC),
+        { text: "Sources: [[FEC committee page C00227546]] (cycle 2024); Senate LDA database via LDA_LOBBYING_REBUILD_2026-10-15.md; [[OpenSecrets client summary]], Microsoft Corp (id D000000115).", kind: "note", links: [{ text: "FEC committee page C00227546", url: FEC }, { text: "OpenSecrets client summary", url: OS }] },
       ] }],
       factors: {
         lobbying_spend: { status: "scored", note: "Lobbying Rule v1.1: calendar-2025 federal lobbying total (parent + subsidiaries), per the OpenSecrets client summary definition (Microsoft Corp, id D000000115) — [[$10,105,000]], fully reconstructed in the 2026-10-15 LDA rebuild (Microsoft Corporation [[$9,360,000]] + LinkedIn Corporation [[$745,000]]; Activision Blizzard $0 in 2025 — it did not reappear as a 2025 client). Verified context: 2024 [[$10,353,764]] · 2023 [[$10,544,433]].", links: [{ text: "$10,105,000", url: OS }, { text: "$9,360,000", url: OS }, { text: "$745,000", url: OS }, { text: "$10,353,764", url: OS }, { text: "$10,544,433", url: OS }] },
@@ -248,8 +252,11 @@ export const MICROSOFT_CARD: CompanyCard = {
     { label: "OpenSecrets — Microsoft Corp federal lobbying client summary (id D000000115)", url: OS },
     { label: "U.S. Government Accountability Office — GAO-26-108703 (June 2026; reissued Aug 24, 2026): workers on SNAP/Medicaid by employer, 11 reporting states, snapshot September 2025 (printed fact, not scored)", url: GAO },
     { label: "U.S. Department of Labor — TAA determination TAW-73361 (denied, 2010)", url: TAA },
-    { label: "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md)." },
-    { label: "Company layoff announcements and Washington WARN notices, Oct 2023 – Oct 2026 — round-by-round in MICROSOFT_EVIDENCE_PACK.md §3." },
+    { label: "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md).", url: MIT },
+    { label: "BLS typical pay — $62,608/year (2025: $1,204/week x 52).", url: BLS },
+    { label: "USCIS H-1B Employer Data Hub, FY2025 employer file (Microsoft Corporation; read 2026-10-22).", url: USCIS },
+    { label: "Washington WARN notices — Employment Security Department (ESD) WARN requirements and notice database.", url: WA_WARN },
+    { label: "Company layoff announcements, Oct 2023 – Oct 2026 — round-by-round in MICROSOFT_EVIDENCE_PACK.md §3." },
   ],
   rules:
     "Methodology v1.0 · Worker Pay Fairness Rule v1.3 · U.S. Workforce Rule v1.3 · Layoff Rule v1.0 · CEO Pay Rule v2.0 · Lobbying Rule v1.1 · Insufficient-Data Rule v1.2 · Score Bands v1.0 · Weights Defense v1.0 · Show-Your-Work Spec v1.0 · Local Economic Contribution Rule v1.0 · Outsourcing + Production Abroad Rule v1.0",

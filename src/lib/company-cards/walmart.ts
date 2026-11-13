@@ -192,14 +192,15 @@ export const WALMART_CARD = {
               ]
             },
             {
-              "text": "Is it what other Americans make? → [[$30,520]] ÷ $62,608 = 0.49 → 15",
+              "text": "Is it what other Americans make? → [[$30,520]] ÷ [[$62,608]] = 0.49 → 15",
               "kind": "step",
               "url": "https://www.sec.gov/Archives/edgar/data/104169/000119312526173673/wmt-20260423.htm",
               "links": [
                 {
                   "text": "$30,520",
                   "url": "https://www.sec.gov/Archives/edgar/data/104169/000119312526173673/wmt-20260423.htm"
-                }
+                },
+              { "text": "$62,608", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" },
               ]
             },
             {
@@ -408,8 +409,9 @@ export const WALMART_CARD = {
               ]
             },
             {
-              "text": "PRINTED LINE (Clause 5 — printed on every card): \"USCIS approved 3,233 H-1B petitions for Walmart in FY2025 — 478 initial + 2,755 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" (Source: USCIS H-1B Employer Data Hub, FY2025 employer file — Wal-Mart Associates Inc was the only Walmart Schedule name with FY2025 rows; read 2026-10-22.)",
-              "kind": "note"
+              "text": "PRINTED LINE (Clause 5 — printed on every card): \"USCIS approved 3,233 H-1B petitions for Walmart in FY2025 — 478 initial + 2,755 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" (Source: [[USCIS H-1B Employer Data Hub]], FY2025 employer file — Wal-Mart Associates Inc was the only Walmart Schedule name with FY2025 rows; read 2026-10-22.)",
+              "kind": "note",
+              "links": [{ "text": "USCIS H-1B Employer Data Hub", "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" }],
             },
             {
               "text": "Pillar score: (68 × 35 + 85 × 25 + 94 × 20) ÷ 80 = 80 — the weighted average of its scored factors (three of four), printed here so the basis is never hidden. (Updated 2026-10-24 under Rule v1.3: previously 77, on Full-Time, Domestic Hiring at 76, and H-1B — (68 × 35 + 76 × 25 + 94 × 20) ÷ 80; before that, 71 under Rule v1.2, on Full-Time and Domestic Hiring — (68 × 35 + 76 × 25) ÷ 60; before that, 68 on Full-Time alone, with Domestic Hiring printed as context.)",
@@ -1456,8 +1458,9 @@ export const WALMART_CARD = {
               "kind": "note"
             },
             {
-              "text": "Federal lobbying, 2025 → $7,840,000 (Walmart Inc — the total printed on its OpenSecrets client summary; cross-checked against the Senate lobbying database's self-filer filings, which sum to the same figure)",
-              "kind": "step"
+              "text": "Federal lobbying, 2025 → [[$7,840,000]] (Walmart Inc — the total printed on its OpenSecrets client summary; cross-checked against the Senate lobbying database's self-filer filings, which sum to the same figure)",
+              "kind": "step",
+              "links": [{ "text": "$7,840,000", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000000367" }],
             },
             {
               "text": "Its PAC, 2023–24 election cycle → [[$3,084,031]] in total spending (Walmart Inc. PAC for Responsible Government, Federal Election Commission records)",
@@ -1471,13 +1474,14 @@ export const WALMART_CARD = {
               ]
             },
             {
-              "text": "Added together → $7,840,000 + [[$3,084,031]] = $10,924,031 → on the scale ($10M = 35, $20M = 20) → 34",
+              "text": "Added together → [[$7,840,000]] + [[$3,084,031]] = $10,924,031 → on the scale ($10M = 35, $20M = 20) → 34",
               "kind": "step",
               "links": [
                 {
                   "text": "$3,084,031",
                   "url": "https://www.fec.gov/data/committee/C00093054/?cycle=2024&tab=summary"
-                }
+                },
+              { "text": "$7,840,000", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000000367" },
               ]
             },
             {
@@ -1494,17 +1498,19 @@ export const WALMART_CARD = {
           "title": "Lobbying Activity (7%) — pillar score 34 (corrected 2026-10-20, Bundle B — Finding W)",
           "lines": [
             {
-              "text": "Lobbying Spend · 65% · SCORED · Lobbying Rule v1.1: the filed measure is the printed total on the OpenSecrets client summary — $7,840,000 for calendar 2025 (cross-checked: Walmart's self-filer LDA filings sum to $7,840,000). Finding W (LDA_LOBBYING_REBUILD_2026-10-15.md §5): the build's $10,726,000 added outside-firm payments ($2,886,000) ON TOP of the printed total those payments are a portion OF — a double-count, corrected 2026-10-20",
-              "kind": "note"
+              "text": "Lobbying Spend · 65% · SCORED · Lobbying Rule v1.1: the filed measure is the printed total on the OpenSecrets client summary — [[$7,840,000]] for calendar 2025 (cross-checked: Walmart's self-filer LDA filings sum to [[$7,840,000]]). Finding W (LDA_LOBBYING_REBUILD_2026-10-15.md §5): the build's $10,726,000 added outside-firm payments ($2,886,000) ON TOP of the printed total those payments are a portion OF — a double-count, corrected 2026-10-20",
+              "kind": "note",
+              "links": [{ "text": "$7,840,000", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000000367" }],
             },
             {
-              "text": "Political Contributions · — · SCORED · M decided 2026-10-14: PAC money is INCLUDED — added to the lobbying total and scored on the same scale (Lobbying Rule v1.1), never averaged. Walmart PAC (WALMART INC. PAC FOR RESPONSIBLE GOVERNMENT, FEC C00093054) 2023–24 total disbursements [[$3,084,031]]. Final: $7,840,000 + $3,084,031 = $10,924,031 → 34. The old 65/35 in-pillar split is superseded, as on the Amazon/Apple maps",
+              "text": "Political Contributions · — · SCORED · M decided 2026-10-14: PAC money is INCLUDED — added to the lobbying total and scored on the same scale (Lobbying Rule v1.1), never averaged. Walmart PAC (WALMART INC. PAC FOR RESPONSIBLE GOVERNMENT, FEC C00093054) 2023–24 total disbursements [[$3,084,031]]. Final: [[$7,840,000]] + [[$3,084,031]] = $10,924,031 → 34. The old 65/35 in-pillar split is superseded, as on the Amazon/Apple maps",
               "kind": "note",
               "links": [
                 {
                   "text": "$3,084,031",
                   "url": "https://www.fec.gov/data/committee/C00093054/?cycle=2024&tab=summary"
-                }
+                },
+              { "text": "$7,840,000", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000000367" },
               ]
             }
           ]
@@ -1522,16 +1528,18 @@ export const WALMART_CARD = {
       "factors": {
         "lobbying_spend": {
           "status": "scored",
-          "note": "Lobbying Rule v1.1: the filed measure is the printed total on the OpenSecrets client summary — $7,840,000 for calendar 2025 (cross-checked: Walmart's self-filer LDA filings sum to $7,840,000). Finding W (LDA_LOBBYING_REBUILD_2026-10-15.md §5): the build's $10,726,000 added outside-firm payments ($2,886,000) ON TOP of the printed total those payments are a portion OF — a double-count, corrected 2026-10-20"
+          "note": "Lobbying Rule v1.1: the filed measure is the printed total on the OpenSecrets client summary — [[$7,840,000]] for calendar 2025 (cross-checked: Walmart's self-filer LDA filings sum to [[$7,840,000]]). Finding W (LDA_LOBBYING_REBUILD_2026-10-15.md §5): the build's $10,726,000 added outside-firm payments ($2,886,000) ON TOP of the printed total those payments are a portion OF — a double-count, corrected 2026-10-20",
+          "links": [{ "text": "$7,840,000", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000000367" }],
         },
         "political_contributions": {
           "status": "scored",
-          "note": "M decided 2026-10-14: PAC money is INCLUDED — added to the lobbying total and scored on the same scale (Lobbying Rule v1.1), never averaged. Walmart PAC (WALMART INC. PAC FOR RESPONSIBLE GOVERNMENT, FEC C00093054) 2023–24 total disbursements [[$3,084,031]]. Final: $7,840,000 + $3,084,031 = $10,924,031 → 34. The old 65/35 in-pillar split is superseded, as on the Amazon/Apple maps",
+          "note": "M decided 2026-10-14: PAC money is INCLUDED — added to the lobbying total and scored on the same scale (Lobbying Rule v1.1), never averaged. Walmart PAC (WALMART INC. PAC FOR RESPONSIBLE GOVERNMENT, FEC C00093054) 2023–24 total disbursements [[$3,084,031]]. Final: [[$7,840,000]] + [[$3,084,031]] = $10,924,031 → 34. The old 65/35 in-pillar split is superseded, as on the Amazon/Apple maps",
           "links": [
             {
               "text": "$3,084,031",
               "url": "https://www.fec.gov/data/committee/C00093054/?cycle=2024&tab=summary"
-            }
+            },
+          { "text": "$7,840,000", "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000000367" },
           ]
         }
       },
@@ -1553,7 +1561,11 @@ export const WALMART_CARD = {
       "url": "https://www.sec.gov/Archives/edgar/data/104169/000119312526173673/wmt-20260423.htm"
     },
     {
-      "label": "Senate lobbying disclosure database (2025 filings) and OpenSecrets"
+      "label": "OpenSecrets — Walmart Inc, federal lobbying client summary (id D000000367), cycle 2025",
+      "url": "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000000367"
+    },
+    {
+      "label": "Senate lobbying disclosure database (2025 filings)"
     },
     {
       "label": "Federal Election Commission (Walmart PAC, 2023–24 cycle)",
@@ -1563,7 +1575,11 @@ export const WALMART_CARD = {
       "label": "U.S. Department of Labor, Trade Adjustment Assistance determinations"
     },
     {
-      "label": "state WARN notices (California, New Jersey)"
+      "label": "California WARN notices — Employment Development Department (EDD) WARN reports and notice index.",
+      "url": "https://edd.ca.gov/en/jobs_and_training/layoff_services_warn"
+    },
+    {
+      "label": "New Jersey WARN notices"
     },
     {
       "label": "company layoff announcements as reported by Reuters and the Wall Street Journal (May 2025, May 2026)"
@@ -1573,13 +1589,16 @@ export const WALMART_CARD = {
       "url": "https://www.gao.gov/assets/890/888620.pdf"
     },
     {
-      "label": "MIT Living Wage Calculator (national benchmark)"
+      "label": "MIT Living Wage Calculator (national benchmark)",
+      "url": "https://livingwage.mit.edu/"
     },
     {
-      "label": "U.S. Bureau of Labor Statistics (median pay)"
+      "label": "U.S. Bureau of Labor Statistics (median pay)",
+      "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm"
     },
     {
-      "label": "USCIS H-1B Employer Data Hub (FY2025 employer file)."
+      "label": "USCIS H-1B Employer Data Hub (FY2025 employer file).",
+      "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub"
     },
     {
       "label": "see WALMART_EVIDENCE_PACK.md — every chain above, plus everything this run could NOT verify, listed openly."

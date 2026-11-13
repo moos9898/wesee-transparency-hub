@@ -13,6 +13,9 @@ const DEF14A =
 const OPENSECRETS =
   "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000000103";
 const GAO = "https://www.gao.gov/assets/890/888620.pdf";
+const BLS = "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm";
+const MIT = "https://livingwage.mit.edu/";
+const USCIS = "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub";
 
 export const JPMORGAN_CARD: CompanyCard = {
   overall: 64,
@@ -57,8 +60,8 @@ export const JPMORGAN_CARD: CompanyCard = {
     worker_standards: {
       score: 82,
       sentence:
-        "Its typical worker earns [[$111,905]] a year — more than twice the cost of living ($49,246), and well above the $62,608 the typical American worker makes.",
-      sentenceLinks: [{ text: "$111,905", url: DEF14A }],
+        "Its typical worker earns [[$111,905]] a year — more than twice the cost of living ($49,246), and well above the [[$62,608]] the typical American worker makes.",
+      sentenceLinks: [{ text: "$111,905", url: DEF14A }, { text: "$62,608", url: BLS }],
       footnote:
         "Scored on pay, the only factor in this pillar verifiable from filings — the same basis as every company. The pay figure is the bank's worldwide median: it does not disclose a U.S.-only median, and that is printed wherever the figure is used.",
       rule: "Worker Pay Fairness Rule v1.3; pay factor only",
@@ -67,10 +70,11 @@ export const JPMORGAN_CARD: CompanyCard = {
           title: "QUESTION 1 — Can the worker live on the pay?",
           lines: [
             {
-              text: "$111,905 (worker earns) → $49,246 (worker needs to live on) → $2.27 earned per $1 needed",
+              text: "[[$111,905]] (worker earns) → $49,246 (worker needs to live on) → $2.27 earned per $1 needed",
               result: "score 100",
               kind: "step",
               url: DEF14A,
+              links: [{ text: "$111,905", url: DEF14A }],
             },
           ],
         },
@@ -78,10 +82,11 @@ export const JPMORGAN_CARD: CompanyCard = {
           title: "QUESTION 2 — Is it what other Americans make?",
           lines: [
             {
-              text: "$111,905 (worker earns) → $62,608 (typical American worker makes, BLS 2025: $1,204/week × 52) → 1.79",
+              text: "[[$111,905]] (worker earns) → [[$62,608]] (typical American worker makes, BLS 2025: [[$1,204/week]] × 52) → 1.79",
               result: "score 100",
               kind: "step",
               url: DEF14A,
+              links: [{ text: "$111,905", url: DEF14A }, { text: "$62,608", url: BLS }, { text: "$1,204/week", url: BLS }],
             },
           ],
         },
@@ -190,8 +195,9 @@ export const JPMORGAN_CARD: CompanyCard = {
           title: "H-1B INTENSITY — PRINTED, NOT SCORED",
           lines: [
             {
-              text: "PRINTED LINE (Clause 5): \"USCIS approved 3,068 H-1B petitions for JPMorgan Chase in FY2025 — 553 initial + 2,515 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\"",
+              text: "PRINTED LINE (Clause 5): \"USCIS approved [[3,068]] H-1B petitions for JPMorgan Chase in FY2025 — 553 initial + 2,515 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\"",
               kind: "note",
+              links: [{ text: "3,068", url: USCIS }],
             },
             {
               text: "The factor's denominator is a filed U.S. headcount COUNT; the bank files only a share (58%), so the factor cannot score and the pillar re-normalizes without it — the pillar stays 85.",
@@ -658,10 +664,17 @@ export const JPMORGAN_CARD: CompanyCard = {
     {
       label:
         "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md).",
+      url: MIT,
+    },
+    {
+      label:
+        "BLS typical pay — $62,608/year (2025: $1,204/week x 52).",
+      url: BLS,
     },
     {
       label:
         "USCIS H-1B Employer Data Hub, FY2025 employer file (JPMorgan Chase & Co; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md).",
+      url: USCIS,
     },
     {
       label:

@@ -76,8 +76,8 @@ export const COSTCO_CARD = {
   "pillars": {
     "worker_standards": {
       "score": 90,
-      "sentence": "Its typical full-time worker earns [[$66,262]] — above the cost of living, and above the $62,608 the typical American worker makes.",
-      "sentenceLinks": [{ "text": "$66,262", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000159/cost-20251204.htm" }],
+      "sentence": "Its typical full-time worker earns [[$66,262]] — above the cost of living, and above the [[$62,608]] the typical American worker makes.",
+      "sentenceLinks": [{ "text": "$66,262", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000159/cost-20251204.htm" }, { "text": "$62,608", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" }],
       "title": "Worker Standards",
       "factors": {
         "living_wage": {
@@ -115,10 +115,10 @@ export const COSTCO_CARD = {
           "title": "QUESTION 2 — Is it what other Americans make?",
           "lines": [
             {
-              "text": "[[$66,262]] (worker earns) → $62,608 (typical American worker makes, BLS 2025: $1,204/week x 52) → 1.06",
+              "text": "[[$66,262]] (worker earns) → [[$62,608]] (typical American worker makes, BLS 2025: [[$1,204/week]] x 52) → 1.06",
               "result": "score 75",
               "kind": "step",
-              "links": [{ "text": "$66,262", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000159/cost-20251204.htm" }]
+              "links": [{ "text": "$66,262", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000159/cost-20251204.htm" }, { "text": "$62,608", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" }, { "text": "$1,204/week", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" }]
             }
           ]
         },
@@ -182,9 +182,9 @@ export const COSTCO_CARD = {
               "kind": "note"
             },
             {
-              "text": "Sources: DEF 14A FY2025 pay-ratio section; MIT Living Wage; 10-K FY2025 (net income [[$8,099M]]; [[341,000]] employees).",
+              "text": "Sources: [[DEF 14A FY2025]] pay-ratio section; [[MIT Living Wage]]; [[10-K FY2025]] (net income [[$8,099M]]; [[341,000]] employees).",
               "kind": "note",
-              "links": [{ "text": "$8,099M", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }, { "text": "341,000", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }]
+              "links": [{ "text": "$8,099M", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }, { "text": "341,000", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }, { "text": "DEF 14A FY2025", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000159/cost-20251204.htm" }, { "text": "MIT Living Wage", "url": "https://livingwage.mit.edu/" }, { "text": "10-K FY2025", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }]
             }
           ]
         }
@@ -271,12 +271,14 @@ export const COSTCO_CARD = {
               "links": [{ "text": "208,000", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }, { "text": "219,000", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }, { "text": "223,000", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }]
             },
             {
-              "text": "Sources: 10-K FY2025, Item 1 segment employee table; USCIS H-1B Employer Data Hub, FY2024 employer file (read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md).",
-              "kind": "note"
+              "text": "Sources: [[10-K FY2025]], Item 1 segment employee table; [[USCIS H-1B Employer Data Hub]], FY2024 employer file (read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md).",
+              "kind": "note",
+              "links": [{ "text": "10-K FY2025", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }, { "text": "USCIS H-1B Employer Data Hub", "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" }],
             },
             {
-              "text": "PRINTED LINE (U.S. Workforce Rule v1.2, Clause 5 — printed on every card): \"USCIS approved 89 H-1B petitions for Costco in FY2024 — 4 initial + 85 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\"",
-              "kind": "note"
+              "text": "PRINTED LINE (U.S. Workforce Rule v1.2, Clause 5 — printed on every card): \"USCIS approved [[89]] H-1B petitions for Costco in FY2024 — 4 initial + 85 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\"",
+              "kind": "note",
+              "links": [{ "text": "89", "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" }],
             }
           ]
         }
@@ -398,8 +400,9 @@ export const COSTCO_CARD = {
               "links": [{ "text": "$903M", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }]
             },
             {
-              "text": "Sources: 10-K FY2025 (headcount by segment, buyback note); WARN records and announcements as above.",
-              "kind": "note"
+              "text": "Sources: [[10-K FY2025]] (headcount by segment, buyback note); WARN records and announcements as above.",
+              "kind": "note",
+              "links": [{ "text": "10-K FY2025", "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm" }],
             }
           ]
         }
@@ -648,8 +651,9 @@ export const COSTCO_CARD = {
               "kind": "note"
             },
             {
-              "text": "Source: OpenSecrets client summary, Costco Wholesale (id D000000703), and organization profile.",
-              "kind": "note"
+              "text": "Source: [[OpenSecrets client summary]], Costco Wholesale (id D000000703), and [[organization profile]].",
+              "kind": "note",
+              "links": [{ "text": "OpenSecrets client summary", "url": "https://www.openSecrets.org/federal-lobbying/clients/summary?cycle=2024&id=D000000703" }, { "text": "organization profile", "url": "https://www.opensecrets.org/orgs/costco-wholesale/summary?cycle=A&id=D000000703" }],
             },
             {
               "text": "M decided 2026-10-14: PAC money is INCLUDED — added to the lobbying total on the same scale (Lobbying Rule v1.1), never averaged. Costco has no company PAC (OpenSecrets org profile shows [[$0]] from the organization), so $0 is added and the pillar stays 100 (cleanup C5)",
@@ -683,13 +687,27 @@ export const COSTCO_CARD = {
       "url": "https://www.gao.gov/assets/890/888620.pdf"
     },
     {
-      "label": "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md)."
+      "label": "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md).",
+      "url": "https://livingwage.mit.edu/"
     },
     {
-      "label": "State WARN notices (CA / WA / NY / TX indexes) and national WARN trackers — no Costco mass round found, Oct 2023 – Oct 2026."
+      "label": "U.S. Bureau of Labor Statistics — median weekly earnings $1,204 in 2025 → $62,608/year (TED, 2026).",
+      "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm"
     },
     {
-      "label": "USCIS H-1B Employer Data Hub, FY2024 employer file (read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)"
+      "label": "California WARN notices — Employment Development Department (EDD) WARN reports and notice index.",
+      "url": "https://edd.ca.gov/en/jobs_and_training/layoff_services_warn"
+    },
+    {
+      "label": "Washington WARN notices — Employment Security Department (ESD) WARN requirements and notice database.",
+      "url": "https://esd.wa.gov/employer-requirements/layoffs-and-employee-notifications/warn-requirements"
+    },
+    {
+      "label": "New York / Texas WARN indexes and national WARN trackers — no Costco mass round found, Oct 2023 – Oct 2026."
+    },
+    {
+      "label": "USCIS H-1B Employer Data Hub, FY2024 employer file (read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)",
+      "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub"
     }
   ],
   "rules": "Methodology v1.0 · Layoff Rule v1.0 · CEO Pay Rule v2.0 · Lobbying Rule v1.1 · Insufficient-Data Rule v1.2 · Worker Pay Fairness Rule v1.3 · U.S. Workforce Rule v1.3 · Local Economic Contribution Rule v1.0 · Outsourcing + Production Abroad Rule v1.0 · Weights Defense v1.0 · Show-Your-Work Spec v1.0",

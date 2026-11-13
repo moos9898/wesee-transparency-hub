@@ -82,8 +82,9 @@ export const APPLE_CARD = {
               "kind": "note"
             },
             {
-              "text": "Benchmarks (the same for every company): a worker needs $49,246 a year (MIT living-wage budget for one adult with no children, converted to a national figure). The typical U.S. worker makes $62,608 a year (BLS, Quarterly Census of Employment and Wages, 2025).",
-              "kind": "note"
+              "text": "Benchmarks (the same for every company): a worker needs $49,246 a year ([[MIT living-wage budget]] for one adult with no children, converted to a national figure). The typical U.S. worker makes [[$62,608]] a year (BLS, Quarterly Census of Employment and Wages, 2025).",
+              "kind": "note",
+              "links": [{ "text": "MIT living-wage budget", "url": "https://livingwage.mit.edu/" }, { "text": "$62,608", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" }],
             }
           ]
         },
@@ -91,8 +92,9 @@ export const APPLE_CARD = {
           "title": "Question 1 — Can the worker live on it?",
           "lines": [
             {
-              "text": "$139,483 (typical worker's pay) ÷ $49,246 (cost of living) = 2.83× → score 100",
+              "text": "[[$139,483]] (typical worker's pay) ÷ $49,246 (cost of living) = 2.83× → score 100",
               "kind": "step",
+              "links": [{ "text": "$139,483", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }],
               "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
@@ -105,8 +107,9 @@ export const APPLE_CARD = {
           "title": "Question 2 — How does it compare to the typical American's pay?",
           "lines": [
             {
-              "text": "$139,483 ÷ $62,608 (typical U.S. pay) = 2.23× → score 100",
+              "text": "[[$139,483]] ÷ [[$62,608]] (typical U.S. pay) = 2.23× → score 100",
               "kind": "step",
+              "links": [{ "text": "$139,483", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "$62,608", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" }],
               "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             }
           ]
@@ -133,8 +136,9 @@ export const APPLE_CARD = {
               "kind": "note"
             },
             {
-              "text": "One sentence for the card: \"Its typical worker earns $139,483 a year — well above the cost of living ($49,246) and the typical U.S. worker's pay ($62,608); the score is held down because Apple's profit per worker is so large that the worker's share of the split is small.\" — with the worldwide flag attached: the $139,483 is Apple's worldwide median (full‑time and part‑time permanent staff, annualized), the only pay figure it files.",
+              "text": "One sentence for the card: \"Its typical worker earns [[$139,483]] a year — well above the cost of living ($49,246) and the typical U.S. worker's pay ([[$62,608]]); the score is held down because Apple's profit per worker is so large that the worker's share of the split is small.\" — with the worldwide flag attached: the [[$139,483]] is Apple's worldwide median (full‑time and part‑time permanent staff, annualized), the only pay figure it files.",
               "kind": "note",
+              "links": [{ "text": "$139,483", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "$62,608", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" }],
               "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
             },
             {
@@ -142,8 +146,9 @@ export const APPLE_CARD = {
               "kind": "note"
             },
             {
-              "text": "Where the numbers come from: median pay and how it was computed (global population; base salary + bonuses + commissions + grant-date equity value; permanent staff annualized) — DEF 14A proxy, \"CEO Pay Ratio—2025\" (p. 62). Net income and employee count — Form 10‑K fiscal 2025. Apple grants stock broadly, so its median includes equity value — the figure is as Apple filed it; we use a company's own disclosed figure rather than adjusting it.",
-              "kind": "note"
+              "text": "Where the numbers come from: median pay and how it was computed (global population; base salary + bonuses + commissions + grant-date equity value; permanent staff annualized) — [[DEF 14A proxy]], \"CEO Pay Ratio—2025\" (p. 62). Net income and employee count — [[Form 10‑K fiscal 2025]]. Apple grants stock broadly, so its median includes equity value — the figure is as Apple filed it; we use a company's own disclosed figure rather than adjusting it.",
+              "kind": "note",
+              "links": [{ "text": "DEF 14A proxy", "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html" }, { "text": "Form 10‑K fiscal 2025", "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/0000320193-25-000079-index.html" }],
             }
           ]
         },
@@ -211,8 +216,9 @@ export const APPLE_CARD = {
               "kind": "note"
             },
             {
-              "text": "PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 3,879 H-1B petitions for Apple in FY2024 — 864 initial + 3,015 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" (FY2024 is Apple's Clause 3 year: the most recent USCIS fiscal year completed on or before the last day of Apple's scored fiscal year.) The H-1B Intensity factor scores only where a U.S. headcount is filed; Apple files none, so the factor does not score and this count is the standing record (Clause 7(iii)). Source: USCIS H-1B Employer Data Hub, FY2024 employer file (Apple Inc + Apple Payments Services LLC; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md).",
-              "kind": "note"
+              "text": "PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 3,879 H-1B petitions for Apple in FY2024 — 864 initial + 3,015 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" (FY2024 is Apple's Clause 3 year: the most recent USCIS fiscal year completed on or before the last day of Apple's scored fiscal year.) The H-1B Intensity factor scores only where a U.S. headcount is filed; Apple files none, so the factor does not score and this count is the standing record (Clause 7(iii)). Source: [[USCIS H-1B Employer Data Hub]], FY2024 employer file (Apple Inc + Apple Payments Services LLC; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md).",
+              "kind": "note",
+              "links": [{ "text": "USCIS H-1B Employer Data Hub", "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" }],
             }
           ]
         },
@@ -840,7 +846,8 @@ export const APPLE_CARD = {
       "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/0001308179-26-000008-index.html"
     },
     {
-      "label": "California EDD WARN reports FY2023‑24 through FY2026‑27, read in full — Apple's complete notice census (735 jobs filed in 2024; 147 in 2026; zero in FY2024‑25)."
+      "label": "California EDD WARN reports FY2023‑24 through FY2026‑27, read in full — Apple's complete notice census (735 jobs filed in 2024; 147 in 2026; zero in FY2024‑25).",
+      "url": "https://edd.ca.gov/en/jobs_and_training/layoff_services_warn",
     },
     {
       "label": "OpenSecrets — Apple Inc lobbying client summary, 2025: $10,410,000 (client id D000021754); FEC committee registry — no Apple Inc. PAC exists.",
@@ -850,7 +857,8 @@ export const APPLE_CARD = {
       "label": "Bloomberg via Reuters and others — the August 2024 (~100) and August 2026 (~200) rounds; Apple's confirmed November 2025 cuts (uncounted — no published count); the considered‑and‑dropped 5,000‑person plan (never carried out)."
     },
     {
-      "label": "U.S. Department of Labor — TAA determination TA‑W‑82,817 (Volt Management Corp., on‑site at Apple Austin; certified 2013)."
+      "label": "U.S. Department of Labor — TAA determination TA‑W‑82,817 (Volt Management Corp., on‑site at Apple Austin; certified 2013).",
+      "url": "https://www.dol.gov/agencies/eta/tradeact/petitioners/petitions/taw?num=82817",
     },
     {
       "label": "GAO‑26‑108703 (June 22, 2026; reissued August 24, 2026) — employer tables searched in full; Apple Inc. appears in none.",
@@ -859,6 +867,18 @@ export const APPLE_CARD = {
     {
       "label": "Workers on public food and health benefits (SNAP / Medicaid): the government's count (GAO, June 2026) lists the 25 largest employers of benefit recipients in each of 11 reporting states, as of September 2025. Apple is not among the employers reported. No national count exists. These counts are printed as context only — they measure a company's size as much as its pay, eligibility depends on a worker's whole household, and they are never part of any score. (The only \"Apple\" anywhere in the report is Applebee's — a different company.)",
       "url": "https://www.gao.gov/assets/890/888620.pdf"
+    },
+    {
+      "label": "MIT Living Wage Calculator — national benchmark: average of all 50 state pages: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md).",
+      "url": "https://livingwage.mit.edu/",
+    },
+    {
+      "label": "BLS typical pay — $62,608/year (2025: $1,204/week x 52).",
+      "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm",
+    },
+    {
+      "label": "USCIS H-1B Employer Data Hub, FY2024 employer file (Apple Inc; read 2026-10-22).",
+      "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub",
     },
     {
       "label": "Every number above was read on its source page on 2026‑10‑14:"

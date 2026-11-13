@@ -20,6 +20,10 @@ const NVDA_ORG_PROFILE =
   "https://www.opensecrets.org/orgs/nvidia-corp/summary?id=D000036303";
 const GAO_PDF = "https://www.gao.gov/assets/890/888620.pdf";
 const DOL_TAA = "https://www.dol.gov/agencies/eta/tradeact";
+const BLS = "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm";
+const MIT = "https://livingwage.mit.edu/";
+const USCIS = "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub";
+const CA_WARN = "https://edd.ca.gov/en/jobs_and_training/layoff_services_warn";
 
 const s = (text: string, result?: string): StepLine => ({ text, result, kind: "step" });
 const t = (text: string, result?: string): StepLine => ({ text, result, kind: "total" });
@@ -52,20 +56,21 @@ export const NVIDIA_CARD: CompanyCard = {
     worker_standards: {
       score: 67,
       sentence:
-        "Its typical worker earns [[$282,050]] a year — far above the cost of living ($49,246) and far above what the typical U.S. worker makes ($62,608). But the company earned about [[$2.86 million]] of profit per worker, and the typical worker's share of that split is only about 9 cents in the dollar — two of WeSee's three pay questions score perfectly, and the third scores zero.",
+        "Its typical worker earns [[$282,050]] a year — far above the cost of living ($49,246) and far above what the typical U.S. worker makes ([[$62,608]]). But the company earned about [[$2.86 million]] of profit per worker, and the typical worker's share of that split is only about 9 cents in the dollar — two of WeSee's three pay questions score perfectly, and the third scores zero.",
       sentenceLinks: [
         { text: "$282,050", url: NVDA_DEF14A },
         { text: "$2.86 million", url: NVDA_10K },
+        { text: "$62,608", url: BLS },
       ],
       footnote:
         "Pay figure note: NVIDIA does not publish a U.S. pay figure, so this is its worldwide median worker, exactly as filed — the same figure used on the CEO pay card below.",
       rule: "Worker Pay Fairness Rule v1.3; pay factor only",
       blocks: [
         { title: "QUESTION 1 — Can the worker live on the pay?", lines: [
-          { text: "[[$282,050]] (typical worker's pay) ÷ $49,246 (national cost of living, MIT) → 5.73×", result: "score 100", kind: "step", url: NVDA_DEF14A, links: [{ text: "$282,050", url: NVDA_DEF14A }] },
+          { text: "[[$282,050]] (typical worker's pay) ÷ $49,246 (national cost of living, [[MIT]]) → 5.73×", result: "score 100", kind: "step", url: NVDA_DEF14A, links: [{ text: "$282,050", url: NVDA_DEF14A }, { text: "MIT", url: MIT }] },
         ] },
         { title: "QUESTION 2 — Is it what other Americans make?", lines: [
-          { text: "[[$282,050]] ÷ $62,608 (typical U.S. worker's pay, BLS) → 4.50×", result: "score 100", kind: "step", url: NVDA_DEF14A, links: [{ text: "$282,050", url: NVDA_DEF14A }] },
+          { text: "[[$282,050]] ÷ [[$62,608]] (typical U.S. worker's pay, [[BLS]]) → 4.50×", result: "score 100", kind: "step", url: NVDA_DEF14A, links: [{ text: "$282,050", url: NVDA_DEF14A }, { text: "$62,608", url: BLS }, { text: "BLS", url: BLS }] },
         ] },
         { title: "QUESTION 3 — How is the money split?", lines: [
           { text: "Profit per worker: [[$120,067,000,000]] (fiscal 2026 profit, 10-K) ÷ [[42,000]] workers (as filed, \"approximately\") → $2,858,738 profit per worker", kind: "note", url: NVDA_10K, links: [{ text: "$120,067,000,000", url: NVDA_10K }, { text: "42,000", url: NVDA_10K }] },
@@ -77,7 +82,7 @@ export const NVIDIA_CARD: CompanyCard = {
           n("Printed limit (on every card): profit per worker is company-wide, because no company files U.S.-only profit. Pay figure: worldwide median, flagged — NVIDIA files no U.S. pay figure."),
           { text: "PRINTED FACT — NOT SCORED: \"In the GAO report listing the [[25]] largest employers whose workers receive food assistance (SNAP) or Medicaid in [[11]] states, NVIDIA does not appear in any state's list (snapshot: September 2025; GAO-26-108703). The GAO lists only each state's [[25]] largest employers per program, so not appearing does not mean zero. No national count exists.\"", kind: "note", url: GAO_PDF, links: [{ text: "25", url: GAO_PDF }, { text: "11", url: GAO_PDF }] },
           n("Printed as a government-counted fact with its limits attached; never enters any score (counts measure company size as much as pay, the 11 states are not a national sample, and eligibility is household-based)."),
-          n("Sources: Form 10-K fiscal 2026; Proxy statement 2026 (DEF 14A); MIT Living Wage; BLS typical pay."),
+          { text: "Sources: [[Form 10-K fiscal 2026]]; [[Proxy statement 2026 (DEF 14A)]]; [[MIT Living Wage]]; [[BLS typical pay]].", kind: "note", links: [{ text: "Form 10-K fiscal 2026", url: NVDA_10K }, { text: "Proxy statement 2026 (DEF 14A)", url: NVDA_DEF14A }, { text: "MIT Living Wage", url: MIT }, { text: "BLS typical pay", url: BLS }] },
         ] },
       ],
       factors: {
@@ -93,14 +98,15 @@ export const NVIDIA_CARD: CompanyCard = {
         "NVIDIA reports about [[42,000]] workers worldwide and does not say how many are in the U.S. — so WeSee cannot score how committed it is to the American workforce. This pillar is not counted in any company's coverage while WeSee's measurement for it is unfinished (Class W).",
       sentenceLinks: [{ text: "42,000", url: NVDA_10K }],
       footnote:
-        "PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 1,767 H-1B petitions for NVIDIA in FY2025 — 560 initial + 1,207 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" The H-1B Intensity factor scores only where a U.S. headcount is filed; NVIDIA files none, so the factor does not score and this count is the standing record (Clause 7(iii)). Source: USCIS H-1B Employer Data Hub, FY2025 employer file (NVIDIA Corporation; read 2026-10-22).",
+        "PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 1,767 H-1B petitions for NVIDIA in FY2025 — 560 initial + 1,207 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" The H-1B Intensity factor scores only where a U.S. headcount is filed; NVIDIA files none, so the factor does not score and this count is the standing record (Clause 7(iii)). Source: [[USCIS H-1B Employer Data Hub]], FY2025 employer file (NVIDIA Corporation; read 2026-10-22).",
+      footnoteLinks: [{ text: "USCIS H-1B Employer Data Hub", url: USCIS }],
       rule: "U.S. Workforce Rule v1.2; Class W — counts in no company's coverage",
       blocks: [
         { title: "U.S. Workforce Commitment — Not yet measured by WeSee", lines: [
           { text: "The locked rule needs a U.S. headcount. NVIDIA's 10-K reports \"approximately [[42,000]] employees in [[38]] countries\" and files no U.S. split — so neither the U.S. share nor U.S. hiring growth can be computed, and WeSee does not estimate.", kind: "note", url: NVDA_10K, links: [{ text: "42,000", url: NVDA_10K }, { text: "38", url: NVDA_10K }] },
           n("The worldwide total is printed as context only; worldwide hiring growth earns nothing in this pillar (the rule counts America, by design)."),
           n("Under Insufficient-Data Rule v1.2 this pillar is Class W — excluded from every company's coverage — so NVIDIA's missing U.S. split is recorded here as fact, not charged as coverage."),
-          n("PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 1,767 H-1B petitions for NVIDIA in FY2025 — 560 initial + 1,207 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" The H-1B Intensity factor scores only where a U.S. headcount is filed; NVIDIA files none, so the factor does not score and this count is the standing record (Clause 7(iii)). Source: USCIS H-1B Employer Data Hub, FY2025 employer file (NVIDIA Corporation; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)."),
+          { ...n("PRINTED LINE — NOT SCORED (U.S. Workforce Rule v1.2, Clause 5): \"USCIS approved 1,767 H-1B petitions for NVIDIA in FY2025 — 560 initial + 1,207 continuing, summed over its filed subsidiary list. Approvals count petitions, not people: one worker can be approved more than once in a year.\" The H-1B Intensity factor scores only where a U.S. headcount is filed; NVIDIA files none, so the factor does not score and this count is the standing record (Clause 7(iii)). Source: [[USCIS H-1B Employer Data Hub]], FY2025 employer file (NVIDIA Corporation; read 2026-10-22 — H1B_USCIS_REDERIVATION_2026-10-22.md)."), links: [{ text: "USCIS H-1B Employer Data Hub", url: USCIS }] },
           n("Source: Form 10-K fiscal 2026, Item 1 (Human Capital)."),
         ] },
       ],
@@ -258,7 +264,7 @@ export const NVIDIA_CARD: CompanyCard = {
           t("→ Between $1M (70) and $5M (50): 70 − (3,970,000 ÷ 4,000,000 × 20) = 50.15", "50"),
           n("Limit (every card): federal lobbying + federal PAC only. State lobbying and trade-group spending are not counted."),
           n("At the original build this pillar was \"Not yet verified by WeSee\" — the OpenSecrets page would not render its tables on 2026-10-14. The 2026-10-15 rebuild read the total on the source page and cross-checked it against the Senate LDA self-filer sums; applied 2026-10-20 under Bundle B."),
-          n("Source: OpenSecrets, NVIDIA Corp (client id D000036303) — lobbying client page and organization profile."),
+          { text: "Source: OpenSecrets, NVIDIA Corp (client id D000036303) — [[lobbying client page]] and [[organization profile]].", kind: "note", links: [{ text: "lobbying client page", url: NVDA_OPENSECRETS }, { text: "organization profile", url: NVDA_ORG_PROFILE }] },
         ] },
       ],
       factors: {
@@ -274,10 +280,11 @@ export const NVIDIA_CARD: CompanyCard = {
     { label: "OpenSecrets — NVIDIA Corp, organization profile summary (id D000036303)", url: NVDA_ORG_PROFILE },
     { label: "U.S. Government Accountability Office — GAO-26-108703 (June 22, 2026; reissued with revisions August 24, 2026): the 25 largest employers whose workers receive SNAP or Medicaid, in 11 reporting states, snapshot September 2025 (printed fact, not scored)", url: GAO_PDF },
     { label: "U.S. Department of Labor, Trade Adjustment Assistance program page — program in termination phase since July 1, 2022", url: DOL_TAA },
-    { label: "MIT Living Wage Calculator — national benchmark: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md)." },
-    { label: "BLS typical pay — $62,608/year (2025: $1,204/week x 52)." },
-    { label: "USCIS H-1B Employer Data Hub, FY2025 employer file (NVIDIA Corporation; read 2026-10-22)." },
-    { label: "State WARN notices (including California, its home state) and company announcements — no mass round found, Oct 2023 – Oct 2026." },
+    { label: "MIT Living Wage Calculator — national benchmark: scored benchmark $49,246/year (see MIT_NATIONAL_BENCHMARK.md).", url: MIT },
+    { label: "BLS typical pay — $62,608/year (2025: $1,204/week x 52).", url: BLS },
+    { label: "USCIS H-1B Employer Data Hub, FY2025 employer file (NVIDIA Corporation; read 2026-10-22).", url: USCIS },
+    { label: "California WARN notices — Employment Development Department (EDD) WARN reports and notice index.", url: CA_WARN },
+    { label: "State WARN notices (other states) and company announcements — no mass round found, Oct 2023 – Oct 2026." },
   ],
   rules:
     "Methodology v1.0 · Worker Pay Fairness Rule v1.3 · Layoff Rule v1.0 · CEO Pay Rule v2.0 · Lobbying Rule v1.1 (incl. PAC) · Insufficient-Data Rule v1.2 · U.S. Workforce Rule v1.2 · Local Economic Contribution Rule v1.0 · Outsourcing + Production Abroad Rule v1.0 · Score Bands v1.0 · Weights Defense v1.0 · Show-Your-Work Spec v1.0",
