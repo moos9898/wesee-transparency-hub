@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -89,6 +90,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <body className="min-h-screen bg-background text-foreground antialiased">
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );
