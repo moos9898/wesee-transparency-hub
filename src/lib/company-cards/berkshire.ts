@@ -59,10 +59,10 @@ export const BERKSHIRE_CARD: CompanyCard = {
     worker_standards: {
       score: 80,
       sentence:
-        "Berkshire's median worker earned [[$93,709]] — well above the cost of living and above what the typical American worker makes — but small next to the [[$172,685]] of profit the company books per worker.",
+        "Berkshire's median worker earned [[$93,709]] — well above the cost of living and above what the typical American worker makes — but small next to the [[$172,687]] of profit the company books per worker.",
       sentenceLinks: [
         { text: "$93,709", url: BRK_DEF14A },
-        { text: "$172,685", url: BRK_10K },
+        { text: "$172,687", url: BRK_10K },
       ],
       footnote:
         "The pay figure is Berkshire's worldwide median from its proxy; Berkshire does not disclose a U.S.-only median. Scored on pay, the only factor in this pillar verifiable from filings — the same basis as every company.",
@@ -75,10 +75,10 @@ export const BERKSHIRE_CARD: CompanyCard = {
           { text: "[[$93,709]] (worker earns) → [[$62,608]] (typical American worker makes, BLS 2025: [[$1,204/week]] x 52) → 1.50", result: "score 100", kind: "step", url: BRK_DEF14A, links: [{ text: "$93,709", url: BRK_DEF14A }, { text: "$62,608", url: BLS }, { text: "$1,204/week", url: BLS }] },
         ] },
         { title: "QUESTION 3 — How is the money split?", lines: [
-          { text: "First show where [[$172,685]] comes from — it is one division, never present it bare:", kind: "note", url: BRK_10K, links: [{ text: "$172,685", url: BRK_10K }] },
-          { text: "[[$67.0B]] (Berkshire's profit for the whole year) ÷ [[387,800]] (workers) = $172,685 (profit per worker — what the company keeps for each worker it has; a measuring number, not a payment)", kind: "note", url: BRK_10K, links: [{ text: "$67.0B", url: BRK_10K }, { text: "387,800", url: BRK_10K }] },
+          { text: "First show where [[$172,687]] comes from — it is one division, never present it bare:", kind: "note", url: BRK_10K, links: [{ text: "$172,687", url: BRK_10K }] },
+          { text: "[[$67.0B]] (Berkshire's profit for the whole year) ÷ [[387,800]] (workers) = $172,687 (profit per worker — what the company keeps for each worker it has; a measuring number, not a payment)", kind: "note", url: BRK_10K, links: [{ text: "$67.0B", url: BRK_10K }, { text: "387,800", url: BRK_10K }] },
           { text: "Then the split:", kind: "note" },
-          { text: "[[$93,709]] (worker gets) + $172,685 (company keeps per worker) → worker's share 35%", result: "score 40", kind: "step", url: BRK_DEF14A, links: [{ text: "$93,709", url: BRK_DEF14A }] },
+          { text: "[[$93,709]] (worker gets) + $172,687 (company keeps per worker) → worker's share 35%", result: "score 40", kind: "step", url: BRK_DEF14A, links: [{ text: "$93,709", url: BRK_DEF14A }] },
         ] },
         { title: "FINAL LINE", lines: [
           t("100 + 100 + 40 → ÷ 3", "80"),
@@ -91,7 +91,7 @@ export const BERKSHIRE_CARD: CompanyCard = {
         ] },
       ],
       factors: {
-        living_wage: { status: "scored", note: "Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 40 → 80, on the worldwide median [[$93,709]] (hierarchy step (c) — Berkshire discloses no U.S.-only and no full-time-only median; flagged on the card). The median carries the heaviest caveats of any built card, all printed: identified once every three years from a judgmental sample of roughly two-thirds of [[387,815]] employees (proxy count; the 10-K says ~[[387,800]]), the median person identified as of Dec 31, 2023 on 2023 W-2 / equivalent taxable pay, with that person's FY2025 total compensation then calculated. Q1: 93,709 ÷ 49,246 = 1.90x → 100. Q2: 93,709 ÷ 62,608 = 1.497x → 100. Q3: profit per worker [[66,968M]] ÷ 387,800 = [[$172,685]] → worker's share 93,709 ÷ (93,709 + 172,685) = 35.2% → 40. Dignity gate not triggered. Q3 honesty note printed on the card: GAAP profit includes returns on a ~[[$300B+]] equity portfolio and was reduced by [[$9,590M]] of after-tax equity-method losses; on Berkshire's own operating-earnings measure ([[$44.4B]]) profit per worker would be $114,493, the share 45.0%, and Q3 would score 60 — the locked rule uses filed GAAP net income for every company, so 40 stands", links: [{ text: "$93,709", url: BRK_DEF14A }, { text: "387,815", url: BRK_DEF14A }, { text: "387,800", url: BRK_10K }, { text: "66,968M", url: BRK_10K }, { text: "$172,685", url: BRK_10K }, { text: "$300B+", url: BRK_10K }, { text: "$9,590M", url: BRK_10K }, { text: "$44.4B", url: BRK_10K }] },
+        living_wage: { status: "scored", note: "Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 40 → 80, on the worldwide median [[$93,709]] (hierarchy step (c) — Berkshire discloses no U.S.-only and no full-time-only median; flagged on the card). The median carries the heaviest caveats of any built card, all printed: identified once every three years from a judgmental sample of roughly two-thirds of [[387,815]] employees (proxy count; the 10-K says ~[[387,800]]), the median person identified as of Dec 31, 2023 on 2023 W-2 / equivalent taxable pay, with that person's FY2025 total compensation then calculated. Q1: 93,709 ÷ 49,246 = 1.90x → 100. Q2: 93,709 ÷ 62,608 = 1.497x → 100. Q3: profit per worker [[66,968M]] ÷ 387,800 = [[$172,687]] → worker's share 93,709 ÷ (93,709 + 172,687) = 35.2% → 40. Dignity gate not triggered. Q3 honesty note printed on the card: GAAP profit includes returns on a ~[[$300B+]] equity portfolio and was reduced by [[$9,590M]] of after-tax equity-method losses; on Berkshire's own operating-earnings measure ([[$44.4B]]) profit per worker would be $114,493, the share 45.0%, and Q3 would score 60 — the locked rule uses filed GAAP net income for every company, so 40 stands", links: [{ text: "$93,709", url: BRK_DEF14A }, { text: "387,815", url: BRK_DEF14A }, { text: "387,800", url: BRK_10K }, { text: "66,968M", url: BRK_10K }, { text: "$172,687", url: BRK_10K }, { text: "$300B+", url: BRK_10K }, { text: "$9,590M", url: BRK_10K }, { text: "$44.4B", url: BRK_10K }] },
         benefits: { status: "not_disclosed", note: "No benefits dollar figure or per-worker cost is filed in the 10-K / DEF 14A read for this build that a rule could score (the pack records none; Benefits is dormant for every company until a U.S.-filed source exists)" },
         workplace_safety: { status: "not_disclosed", note: "No company-wide filed rate; OSHA holds establishment-level data only (same basis as the other built maps). For a 60+ subsidiary conglomerate there is also no single filed rate to read" },
         employee_retention: { status: "not_disclosed", note: "No retention/turnover figure is filed in the 10-K / DEF 14A read for this build in comparable U.S.-only form (the pack records none; Retention is dormant under the U.S.-only principle)" },

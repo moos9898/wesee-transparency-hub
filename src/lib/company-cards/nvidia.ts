@@ -70,7 +70,7 @@ export const NVIDIA_CARD: CompanyCard = {
           { text: "[[$282,050]] (typical worker's pay) ÷ $49,246 (national cost of living, [[MIT]]) → 5.73×", result: "score 100", kind: "step", url: NVDA_DEF14A, links: [{ text: "$282,050", url: NVDA_DEF14A }, { text: "MIT", url: MIT }] },
         ] },
         { title: "QUESTION 2 — Is it what other Americans make?", lines: [
-          { text: "[[$282,050]] ÷ [[$62,608]] (typical U.S. worker's pay, [[BLS]]) → 4.50×", result: "score 100", kind: "step", url: NVDA_DEF14A, links: [{ text: "$282,050", url: NVDA_DEF14A }, { text: "$62,608", url: BLS }, { text: "BLS", url: BLS }] },
+          { text: "[[$282,050]] ÷ [[$62,608]] (typical U.S. worker's pay, [[BLS]]) → 4.51×", result: "score 100", kind: "step", url: NVDA_DEF14A, links: [{ text: "$282,050", url: NVDA_DEF14A }, { text: "$62,608", url: BLS }, { text: "BLS", url: BLS }] },
         ] },
         { title: "QUESTION 3 — How is the money split?", lines: [
           { text: "Profit per worker: [[$120,067,000,000]] (fiscal 2026 profit, 10-K) ÷ [[42,000]] workers (as filed, \"approximately\") → $2,858,738 profit per worker", kind: "note", url: NVDA_10K, links: [{ text: "$120,067,000,000", url: NVDA_10K }, { text: "42,000", url: NVDA_10K }] },

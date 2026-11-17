@@ -13,7 +13,7 @@ import type { CompanyCard, StepLine } from "./amazon";
 const DEF26 = "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm";
 const K25 = "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm";
 const OS = "https://www.opensecrets.org/federal-lobbying/clients/summary?cycle=2025&id=D000067823";
-const FEC = "https://www.fec.gov/data/committee/C00428623/";
+const FEC = "https://www.fec.gov/data/committee/C00428623/?cycle=2024&tab=summary";
 const GAO = "https://www.gao.gov/assets/890/888620.pdf";
 const DOL = "https://www.dol.gov/sites/dolgov/files/ETA/tradeact/pdfs/TAA_Termination_Fact_Sheet.pdf";
 const BLS = "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm";

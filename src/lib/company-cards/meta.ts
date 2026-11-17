@@ -69,14 +69,14 @@ export const META_CARD: CompanyCard = {
   "pillars": {
     "worker_standards": {
       "score": 79,
-      "sentence": "Its typical worker worldwide earns [[$388,200]] a year — far above the cost of living ($49,246) and the typical U.S. worker's pay ([[$62,608]]); against [[$766,631]] of profit per employee, the worker's share of the split is 34%.",
+      "sentence": "Its typical worker worldwide earns [[$388,200]] a year — far above the cost of living ($49,246) and the typical U.S. worker's pay ([[$62,608]]); against [[$766,601]] of profit per employee, the worker's share of the split is 34%.",
       "sentenceLinks": [
         {
           "text": "$388,200",
           "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
         },
         {
-          "text": "$766,631",
+          "text": "$766,601",
           "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
         },
       { "text": "$62,608", "url": "https://www.bls.gov/opub/ted/2026/median-weekly-earnings-were-1204-in-2025.htm" },
@@ -124,11 +124,11 @@ export const META_CARD: CompanyCard = {
           "title": "QUESTION 3 — How is the money split?",
           "lines": [
             {
-              "text": "First show where $766,631 comes from — it is one division, never present it bare:",
+              "text": "First show where $766,601 comes from — it is one division, never present it bare:",
               "kind": "note"
             },
             {
-              "text": "[[$60.5B]] (Meta's profit for the whole year) ÷ [[78,865]] (workers) = [[$766,631]] (profit per worker — what the company keeps for each worker it has; a measuring number, not a payment)",
+              "text": "[[$60.5B]] (Meta's profit for the whole year) ÷ [[78,865]] (workers) = [[$766,601]] (profit per worker — what the company keeps for each worker it has; a measuring number, not a payment)",
               "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
               "links": [
                 {
@@ -140,7 +140,7 @@ export const META_CARD: CompanyCard = {
                   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
                 },
                 {
-                  "text": "$766,631",
+                  "text": "$766,601",
                   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
                 }
               ],
@@ -151,7 +151,7 @@ export const META_CARD: CompanyCard = {
               "kind": "note"
             },
             {
-              "text": "[[$388,200]] (worker gets) + [[$766,631]] (company keeps per worker) → worker's share 34%",
+              "text": "[[$388,200]] (worker gets) + [[$766,601]] (company keeps per worker) → worker's share 34%",
               "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
               "links": [
                 {
@@ -159,7 +159,7 @@ export const META_CARD: CompanyCard = {
                   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
                 },
                 {
-                  "text": "$766,631",
+                  "text": "$766,601",
                   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
                 }
               ],
@@ -245,7 +245,7 @@ export const META_CARD: CompanyCard = {
           "title": "Worker Standards (pillar weight 16%) — pillar score 79 (pay factor only, same basis as Amazon/Costco/Apple/Walmart)",
           "lines": [
             {
-              "text": "Living Wage · 40% · SCORED · Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 37 → 79, on the worldwide median [[$388,200]] (hierarchy step (c) — Meta files no U.S.-only and no full-time-only median; flagged on the card). Q3: profit per worker [[$60,458M]] ÷ [[78,865]] = [[$766,631]] → worker's share 34% → 37. Dignity gate not triggered",
+              "text": "Living Wage · 40% · SCORED · Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 37 → 79, on the worldwide median [[$388,200]] (hierarchy step (c) — Meta files no U.S.-only and no full-time-only median; flagged on the card). Q3: profit per worker [[$60,458M]] ÷ [[78,865]] = [[$766,601]] → worker's share 34% → 37. Dignity gate not triggered",
               "links": [
                 {
                   "text": "$388,200",
@@ -260,7 +260,7 @@ export const META_CARD: CompanyCard = {
                   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
                 },
                 {
-                  "text": "$766,631",
+                  "text": "$766,601",
                   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
                 }
               ],
@@ -293,7 +293,7 @@ export const META_CARD: CompanyCard = {
       "factors": {
         "living_wage": {
           "status": "scored",
-          "note": "Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 37 → 79, on the worldwide median [[$388,200]] (hierarchy step (c) — Meta files no U.S.-only and no full-time-only median; flagged on the card). Q3: profit per worker [[$60,458M]] ÷ [[78,865]] = [[$766,631]] → worker's share 34% → 37. Dignity gate not triggered",
+          "note": "Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 37 → 79, on the worldwide median [[$388,200]] (hierarchy step (c) — Meta files no U.S.-only and no full-time-only median; flagged on the card). Q3: profit per worker [[$60,458M]] ÷ [[78,865]] = [[$766,601]] → worker's share 34% → 37. Dignity gate not triggered",
           "links": [
             {
               "text": "$388,200",
@@ -308,7 +308,7 @@ export const META_CARD: CompanyCard = {
               "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
             },
             {
-              "text": "$766,631",
+              "text": "$766,601",
               "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
             }
           ]

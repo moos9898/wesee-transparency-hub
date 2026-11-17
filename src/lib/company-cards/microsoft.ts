@@ -32,7 +32,7 @@ export const MICROSOFT_CARD: CompanyCard = {
   overall: 49,
   band: "Weak",
   coverage:
-    "5 of 7 ready pillars scored from filed sources. On the scored pillars Microsoft averages 48 before caps; the layoff rule caps any company at 49 when it keeps running mass layoffs in profitable years — the cap stands, but the raw score is below it, so it does not bind. One pillar (Community Resilience) is not yet measurable for any company.",
+    "5 of 7 ready pillars scored from filed sources. On the scored pillars Microsoft averages 49 before caps; the layoff rule caps any company at 49 when it keeps running mass layoffs in profitable years — the cap stands, and the raw score equals it, so it does not bind. One pillar (Community Resilience) is not yet measurable for any company.",
   period: "Period scored: FY2026 (ended Jun 30, 2026) · Scoring date: 2026-10-14 · Updated 2026-10-24 under U.S. Workforce Rule v1.3 · Methodology v1.0",
   overallBlock: {
     title: "The overall score",

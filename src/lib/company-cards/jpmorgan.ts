@@ -94,16 +94,16 @@ export const JPMORGAN_CARD: CompanyCard = {
           title: "QUESTION 3 — How is the money split?",
           lines: [
             {
-              text: "First show where $179,102 comes from — it is one division, never present it bare:",
+              text: "First show where $179,108 comes from — it is one division, never present it bare:",
               kind: "note",
             },
             {
-              text: "$57.0B (the bank's profit for the whole year) ÷ 318,512 (workers) = $179,102 (profit per worker — what the company keeps for each worker it has; a measuring number, not a payment)",
+              text: "$57.0B (the bank's profit for the whole year) ÷ 318,512 (workers) = $179,108 (profit per worker — what the company keeps for each worker it has; a measuring number, not a payment)",
               kind: "step",
               url: TEN_K,
             },
             {
-              text: "$111,905 (worker gets) + $179,102 (company keeps per worker) → worker's share 38.5%",
+              text: "$111,905 (worker gets) + $179,108 (company keeps per worker) → worker's share 38.5%",
               result: "score 47",
               kind: "step",
               url: DEF14A,
@@ -138,7 +138,7 @@ export const JPMORGAN_CARD: CompanyCard = {
       factors: {
         living_wage: {
           status: "scored",
-          note: "Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 47 → 82, on the worldwide median [[$111,905]] (hierarchy step (c) — JPMorgan discloses no U.S.-only median and no full-time median; the proxy's median is the global full-time, part-time, temporary and seasonal population with NO full-time-equivalent adjustment for part-time staff; flagged wherever the figure is used, and the same figure is used in all three questions and in the CEO ratio). Q1: 111,905 ÷ 49,246 = 2.27x → 100. Q2: 111,905 ÷ 62,608 = 1.79x → 100. Q3: profit per worker [[57,048M]] ÷ [[318,512]] = $179,102 → worker's share 111,905 ÷ (111,905 + 179,102) = 38.5% → 47. Dignity gate not triggered. Limitation printed on the card: profit per worker is company-wide — no company files a U.S.-only profit figure (the rule's one declared exception)",
+          note: "Worker Pay Fairness Rule v1.3 (three questions): Q1 100 / Q2 100 / Q3 47 → 82, on the worldwide median [[$111,905]] (hierarchy step (c) — JPMorgan discloses no U.S.-only median and no full-time median; the proxy's median is the global full-time, part-time, temporary and seasonal population with NO full-time-equivalent adjustment for part-time staff; flagged wherever the figure is used, and the same figure is used in all three questions and in the CEO ratio). Q1: 111,905 ÷ 49,246 = 2.27x → 100. Q2: 111,905 ÷ 62,608 = 1.79x → 100. Q3: profit per worker [[57,048M]] ÷ [[318,512]] = $179,108 → worker's share 111,905 ÷ (111,905 + 179,108) = 38.5% → 47. Dignity gate not triggered. Limitation printed on the card: profit per worker is company-wide — no company files a U.S.-only profit figure (the rule's one declared exception)",
           links: [
             { text: "$111,905", url: DEF14A },
             { text: "57,048M", url: TEN_K },
